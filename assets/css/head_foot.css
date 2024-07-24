@@ -66,9 +66,12 @@
   display: block;
 }
 .book__join {
+  border: none;
+  background-color: transparent;
   display: flex;
   align-items: center;
   gap: 6px;
+  cursor: pointer;
 }
 .book__profile_icon {
   font-size: 20px;
@@ -86,7 +89,6 @@
 .footer {
   font-family: Montserrat;
   padding-top: 100px;
-  color: var(--text-color-white);
 }
 .footer__social {
   display: flex;
@@ -104,11 +106,17 @@
 }
 .footer__social_icons {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 50px;
 }
 .footer__social_icons span {
   font-size: 72px;
   color: var(--text-color-brown);
+  cursor: pointer;
+}
+.youtube_icon {
+  display: none;
 }
 .footer__content_bg {
   background-color: var(--footer-background-color);
@@ -125,12 +133,13 @@
   align-items: flex-start;
   gap: 90px;
 }
-.footer__list_item {
+.footer__list_item a {
   font-size: 13px;
   font-weight: 400;
   line-height: 25.5px;
+  color: var(--text-color-white);
 }
-.footer__list_item_title {
+.footer__list_item a.footer__list_link_title {
   font-size: 18px;
   line-height: 35.31px;
 }
@@ -175,6 +184,7 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 23.54px;
+  color: var(--text-color-white);
 }
 @media only screen and (max-width: 767px) {
   /*! NAVBAR  */
