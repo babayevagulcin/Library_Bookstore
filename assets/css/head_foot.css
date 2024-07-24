@@ -176,3 +176,7 @@
   font-weight: 400;
   line-height: 23.54px;
 }
+@media only screen and (max-width: 767px) {
+  /*! NAVBAR  */
+  /*! FOOTER  */
+}
