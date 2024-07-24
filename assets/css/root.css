@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --dark-red-color: #8b0000;
+  --logo-before-color: rgba(0, 0, 0, 0.5);
+  --orange-color: #e16a00;
+  --background-color-light: #fffaf5;
+  --background-color-red: #720418;
+  --text-color-black: #000;
+  --text-color-white: #fff;
+  --text-color-brown: #241400;
+  --text-color-red: #720418;
+  --footer-background-color: #391f00;
+  --social-icon-color: #241400;
+}
