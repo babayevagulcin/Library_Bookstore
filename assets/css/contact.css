@@ -1,40 +1,39 @@
-.contact_us h1{
-    font-family: Montserrat;
-    font-size: 36px;
-    font-weight: 900;
-    line-height: 70.63px;
-    
+.contact_us h1 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 70.63px;
 }
-.contact_form{
-    display: flex;
-    flex-direction: column;
-    row-gap: 32px;
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
 }
-.form_group{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 36px;
-    width: 100%;
+.form_group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 36px;
+  width: 100%;
 }
-.contact_input{
-    width: 50%;
-    padding :24px 36px;
-    border: 1px solid var(--form-border-color);
+.contact_input {
+  width: 50%;
+  padding: 24px 36px;
+  border: 1px solid var(--form-border-color);
 }
-.textarea{
-    height: 150px;
-    border: 1px solid var(--form-border-color);
-    padding: 12px 38px;
+.textarea {
+  height: 150px;
+  border: 1px solid var(--form-border-color);
+  padding: 12px 38px;
 }
 
-.button{
-    display: block;
-    width: 30%;
-    margin: 0 auto;
-    padding: 15px ;
-    border-color: #E16A00;
-    background-color: #E16A00;
-    color: white;
-    border: none;
+.button {
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+  padding: 15px;
+  border-color: #e16a00;
+  background-color: #e16a00;
+  color: white;
+  border: none;
 }
