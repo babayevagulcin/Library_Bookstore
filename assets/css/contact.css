@@ -1,0 +1,39 @@
+.contact-us h1{
+    /* margin-left: auto;
+    margin-right: auto; */
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 70.63px;
+    
+}
+.form-group{
+    display: block;
+    border: 1px solid #CECECE;
+    height: 55px;
+    width: 100%;
+    padding: 25px;
+}
+
+.textareaa{
+    width: 100%;
+    margin: 30px 0px 0px 0px;
+    height: 150px;
+    border: 1px solid #CECECE;
+
+    border-color:#CECECE;
+    padding: 25px;
+}
+
+.buttton{
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px ;
+    border-color: #E16A00;
+    background-color: #E16A00;
+    color: white;
+    border: none;
+    margin-top: 30px;
+}
