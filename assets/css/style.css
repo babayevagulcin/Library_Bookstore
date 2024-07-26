@@ -1,0 +1,135 @@
+.main {
+    width: 100%;
+    padding-top: 140px;
+    margin: 0px auto;
+  }
+.hero_section {
+display: flex;
+}
+.hero_div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+  } 
+
+.hero_content_div{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+  }
+
+  /* .hero_books_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 0px auto;
+    margin-top: 100px;
+  } */
+
+
+  .catalog_section {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 66px auto;
+    gap: 46px;
+  }
+  
+  .catalog_title {
+    font-family: var(--crimsontext);
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 196.187%;
+    
+  }
+  
+  .catalog_items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+    background: var(--text-color-white);
+    
+    
+  }
+  
+  .catalog_items button {
+    color: var(--text-color-black);
+    font-family: var(--crimsontext);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 196.187%;
+    padding: 24px 65px;
+    border: none;
+    border-radius: 10px;
+    background:var(--text-color-white);
+    box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+    
+  }
+  
+  .catalog_items button:hover {
+    transition: all 0.3s;
+    transform: scale(1.1);
+  }
+  
+
+  .delivery_section {
+    width: 80%;
+    margin: 0px auto;
+    color: var(--social-icon-color);
+    font-family: var(--crimsontext);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .delivery_section h4 {
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 42px;
+  }
+  
+  .delivery_section p {
+    font-size: 12px;
+    width: 95%;
+    font-weight: 400;
+    line-height: 196.187%;
+  }
+
+
+  .about_store_section {
+    width: 80%;
+    margin: 110px auto 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about_store_title {
+    color: var(--text-color-brown);
+    font-family: var(--crimsontext);
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 32px;
+  }
+  
+  .about_store_indicators {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+  }
