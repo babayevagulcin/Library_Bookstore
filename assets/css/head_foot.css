@@ -1,3 +1,6 @@
+body {
+  background-color: var(--background-color-light);
+}
 .container {
   max-width: 90%;
   margin: 0 auto;
@@ -5,6 +8,7 @@
 /*! NAVBAR */
 .book_nav {
   padding-top: 30px;
+  padding-bottom: 100px;
   font-family: Montserrat;
 }
 .book {
