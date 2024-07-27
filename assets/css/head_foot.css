@@ -1,19 +1,6 @@
 body {
   background-color: var(--background-color-light);
 }
-.btn {
-  transition: all 0.3s ease;
-}
-.btn:hover {
-  background-color: var(--text-color-white);
-  color: var(--orange-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
-}
-.btn:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
 
 /*! NAVBAR */
 .book_nav {
