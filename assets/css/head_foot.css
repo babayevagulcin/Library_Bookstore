@@ -1,12 +1,7 @@
 body {
   background-color: var(--background-color-light);
 }
-.container {
-  max-width: 90%;
-  margin: 0 auto;
-}
 .btn {
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 .btn:hover {
