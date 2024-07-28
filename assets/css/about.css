@@ -36,7 +36,7 @@
   font-size: 36px;
   font-weight: 900;
   line-height: 70.63px;
-  text-align: left;
+  
 }
 
 .about_content p {
@@ -44,7 +44,7 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 35.31px;
-  text-align: left;
+
 }
 
 .book_images {
@@ -54,6 +54,19 @@
 .book_images img {
   height: 100%;
   width: 100%;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .about{
+    flex-direction: column-reverse;
+    padding-top: 30px;
+  }
+
+  .about_content {
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
 
