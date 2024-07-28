@@ -80,7 +80,7 @@
   font-weight: 900;
   font-size: 36px;
   line-height: 70px;
-  color:var(--social-icon-color) ;
+  color: var(--social-icon-color);
 }
 
 .hero_content_div p {
@@ -254,7 +254,6 @@
 
 .about_store_title {
   color: var(--text-color-brown);
-  font-family: var(--crimsontext);
   font-size: 25px;
   font-weight: 900;
   margin-bottom: 32px;
