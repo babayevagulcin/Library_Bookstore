@@ -1,11 +1,10 @@
 .about {
+  font-family: Montserrat;
   display: flex;
   gap: 70px;
   padding-top: 100px;
   margin-bottom: 100px;
-  font-family: Montserrat;
 }
-
 .about_content {
   width: 70%;
 }
@@ -14,6 +13,12 @@
   font-size: 36px;
   font-weight: 900;
   line-height: 70.63px;
+}
+
+.about_content p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 35.31px;
 }
 
 .about_content p {
