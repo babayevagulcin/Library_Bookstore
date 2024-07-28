@@ -1,25 +1,21 @@
- .about-store {
-    text-align: center;
-    margin-bottom: 50px;
-} 
- .about-store h1 {
-    font-size: 36px;
-    color: #333;
-} 
- .about-store p {
-    max-width: 686px;
-    height: 253px;
-    top: 266px;
-    left: 215px;
-}  
- 
- 
- .book-display {
- width: 570px;
- height: 310px;
- top: 266px;
- left: 973px;
-} 
- 
+.about-store {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.about-store h1 {
+  font-size: 36px;
+  color: #333;
+}
+.about-store p {
+  max-width: 686px;
+  height: 253px;
+  top: 266px;
+  left: 215px;
+}
 
- 
+.book-display {
+  width: 570px;
+  height: 310px;
+  top: 266px;
+  left: 973px;
+}
