@@ -13,6 +13,95 @@
     <title>Admin Panel</title>
   </head>
   <body>
+    <header class="book__buttons">
+      <button class="book__join">
+        <span class="master icon-Profile book__profile_icon"></span>
+        <span class="book__join_us">Admin</span>
+      </button>
+    </header>
+    <nav class="admin_nav">
+      <div class="book__logo">
+        <span class="master icon-books-stack"></span>
+        <div class="book__content">
+          <h1>library</h1>
+          <h4>Admin Panel</h4>
+        </div>
+      </div>
+      <ul class="nav__list">
+        <li class="nav__list_item">
+          <a href="../../index.html ">
+            <span class="master icon-books-stack"></span>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav__list_item">
+          <a href="#">
+            <span class="master icon-books-stack"></span>
+            <span>Books</span>
+          </a>
+        </li>
+        <li class="nav__list_item">
+          <a href="#">
+            <span class="master icon-books-stack"></span>
+            <span>about</span>
+          </a>
+        </li>
+        <li class="nav__list_item">
+          <a href="#">
+            <span class="master icon-books-stack"></span>
+            <span>Join us</span>
+          </a>
+        </li>
+        <li class="nav__list_item">
+          <a href="#">
+            <span class="master icon-books-stack"></span>
+            <span>contact</span>
+          </a>
+        </li>
+        <li class="nav__list_item">
+          <a href="#">
+            <span class="master icon-books-stack"></span>
+            <span>logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main class="admin_panel">
+      <div class="container">
+        <section class="add_book">
+          <p class="add_book__title">Add book</p>
+          <form action="" class="add_book__form">
+            <p class="add_book__form_title">Search book</p>
+            <label for="" class="add_book__label">
+              <input
+                type="text"
+                name="search"
+                id="searchInput"
+                class="add_book__input"
+                placeholder="Dan Brown"
+              />
+              <span class="master icon-search"></span>
+            </label>
+            <div class="add_book__search">
+              <p>
+                <span class="master icon-clock"> </span>
+                <span>Dan Brown Davinc</span>
+              </p>
+              <p>
+                <span class="master icon-clock"> </span>
+                <span>Dan Brown Davinc</span>
+              </p>
+            </div>
+          </form>
+        </section>
+
+        <section class="book_form">
+          <form action="" id="bookForm">
+            
+          </form>
+        </section>
+      </div>
+    </main>
     <script src="../js/adminPanel.js"></script>
   </body>
 </html>
