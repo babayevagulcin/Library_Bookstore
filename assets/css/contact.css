@@ -50,3 +50,35 @@ text-align: left;
   color: var(--text-color-white);
   border: none;
 }
+
+/* 
+ @media (max-width: 480px) {
+  .button{
+    font-size: 16px;
+  }
+  .contact_form{
+    font-size: 14px;
+  }
+ } */
+
+ @media (max-width: 480px){
+  .contact_form{
+    width: 243px;
+height: 333.02px;
+top: 99px;
+left: 38px;
+gap: 0px;
+border-radius: 5px 0px 0px 0px;
+opacity: 0px;
+  }
+  .button{
+    width: 243px;
+height: 37px;
+top: 501px;
+left: 38px;
+gap: 0px;
+border-radius: 5px 0px 0px 0px;
+opacity: 0px;
+
+  }
+ }
