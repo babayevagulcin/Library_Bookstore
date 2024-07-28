@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 32px;
+  padding-top: 30px;
 }
 .form_group {
   display: flex;
@@ -22,23 +23,28 @@
   padding: 24px 36px;
   border: 1px solid var(--form-border-color);
 }
+
+.textarea {
+  height: 150px;
+  border: 1px solid var(--form-border-color);
+  padding: 12px 38px;
+}
+
 .contact_input::placeholder {
-  font-family:Crimson Text;
+  font-family: Crimson Text;
   font-size: 23px;
   font-weight: 400;
   line-height: 29.9px;
-  
 }
 .textarea {
   height: 150px;
   border: 1px solid var(--form-border-color);
   padding: 12px 38px;
   font-family: Crimson Text;
-font-size: 23px;
-font-weight: 400;
-line-height: 29.9px;
-text-align: left;
-
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 29.9px;
+  text-align: left;
 }
 
 .button {
@@ -46,8 +52,14 @@ text-align: left;
   width: 30%;
   margin: 0 auto;
   padding: 15px;
+
+  border-color: #e16a00;
+  background-color: #e16a00;
+  color: white;
+
   background-color: var(--orange-color);
   color: var(--text-color-white);
+
   border: none;
 }
 
