@@ -150,4 +150,16 @@ body{
   }  
 
 
- 
+  .swiper {
+    width: 70%;
+    margin-top: 95px;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #720418c7;
+  }
+
+  ::-webkit-scrollbar {
+    width: 1px;
+  }
