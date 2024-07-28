@@ -1,3 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+button {
+  cursor: pointer;
+}
+.btn {
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: var(--text-color-white);
+  color: var(--orange-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
 html,
 body,
 div,

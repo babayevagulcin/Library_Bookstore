@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--* ICON LINK -->
+    <link rel="stylesheet" href="../icons/style.css" />
+    <!--* CSS LINKS -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/root.css" />
+    <link rel="stylesheet" href="../css/adminLogin.css" />
+
+    <title>Admin Login</title>
+  </head>
+  <body>
+    <section class="admin_login">
+      <div class="container">
+        <div class="book__logo">
+          <span class="master icon-books-stack"></span>
+          <div class="book__content">
+            <h1>library</h1>
+            <h4>Admin panel</h4>
+          </div>
+        </div>
+        <div class="login">
+          <h2>Welcome Admin</h2>
+          <form action="" id="loginForm">
+            <div class="login__input_group">
+              <label for="username" class="login__label">
+                <input
+                  type="text"
+                  id="username"
+                  class="login__input"
+                  name="username"
+                  placeholder="Username"
+                  required
+                />
+              </label>
+              <label for="password" class="login__label">
+                <input
+                  type="password"
+                  id="password"
+                  class="login__input"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+              </label>
+            </div>
+            <div class="login__buttons">
+              <button type="submit" class="login__btn btn">Join</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script src="../js/adminLogin.js"></script>
+  </body>
+</html>

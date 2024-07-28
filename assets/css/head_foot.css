@@ -1,10 +1,11 @@
-.container {
-  max-width: 90%;
-  margin: 0 auto;
+body {
+  background-color: var(--background-color-light);
 }
+
 /*! NAVBAR */
 .book_nav {
   padding-top: 30px;
+  padding-bottom: 100px;
   font-family: Montserrat;
 }
 .book {
@@ -90,7 +91,6 @@
   position: relative;
   overflow: hidden;
   transition: color 0.3s ease-in-out;
-  cursor: pointer;
 }
 .book__join::before {
   content: "";
@@ -220,7 +220,6 @@
   background-color: transparent;
   border: 1px solid var(--orange-color);
   padding-right: 36px;
-  cursor: pointer;
 }
 .footer__info {
   display: flex;
