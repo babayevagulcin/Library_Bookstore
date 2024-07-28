@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/root.css" />
     <link rel="stylesheet" href="../css/head_foot.css" />
     <link rel="stylesheet" href="../css/search.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <title>Search Page</title>
   </head>
@@ -54,6 +55,28 @@
         </div>
       </div>
     </nav>
+
+    <main class="main">
+      <div class="mistakeResult alert">Mistake:Please fill this blank</div>
+      <div class="notAvailable alert">Mistake:Not available</div>
+      <section class="holder">
+        <div class="box1">
+          <h1 class="search">Search</h1>
+          <input
+            class="inputSearch"
+            id="inputSearch"
+            placeholder="Book name"
+            type="search"
+          />
+          <button class="inputBtn" type="submit" id="inputBtn">Search</button>
+        </div>                   
+          
+       
+            
+        </section>
+    </main>
+
+
 
     <footer class="footer">
       <div class="container">
@@ -160,6 +183,7 @@
         </div>
       </div>
     </footer>
+  
     <script src="../js/search.js"></script>
   </body>
 </html>
