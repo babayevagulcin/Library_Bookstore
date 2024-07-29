@@ -60,7 +60,7 @@ body {
 }
 /*! ADMIN RESPONSIVE HEADER */
 .res_header {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
 }
@@ -375,6 +375,9 @@ table tr:nth-child(even) {
   /*! ADMIN HEADER */
   .book__header {
     padding: 10px 30px 40px 16px;
+  }
+  .res_header {
+    display: flex;
   }
   .book__join {
     display: none;
