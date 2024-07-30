@@ -3,6 +3,12 @@
 }
 .hero_section {
   display: flex;
+  width: 80%;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color-light);
 }
 .hero_div {
   width: 100%;
@@ -21,7 +27,6 @@
   align-items: center;
   margin: 0px auto;
 }
-
 .catalog_section {
   width: 80%;
   display: flex;
@@ -37,15 +42,6 @@
   font-size: 25px;
   font-weight: 900;
   line-height: 196.187%;
-}
-
-.hero_section {
-  width: 80%;
-  margin: 0px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background-color-light);
 }
 
 .hero_content_div {
@@ -131,13 +127,9 @@
 
 .catalog_items button {
   color: var(--text-color-black);
-
-  font-family: var(--crimsontext);
   font-size: 14px;
   font-weight: 700;
   font-family: Montserrat, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
   line-height: 28px;
   padding: 24px 65px;
   border: none;
@@ -236,6 +228,7 @@
 
 .about_store_title {
   color: var(--text-color-brown);
+  font-family: Montserrat, sans-serif;
   font-size: 25px;
   font-weight: 900;
   margin-bottom: 32px;
