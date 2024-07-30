@@ -1,10 +1,16 @@
-.main {
-  width: 100%;
-  padding-top: 140px;
-  /* margin: 0px auto; */
+.hero {
+  
+  padding-top: 100px;
+  
 }
 .hero_section {
   display: flex;
+  width: 80%;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color-light);
 }
 .hero_div {
   width: 100%;
@@ -24,14 +30,7 @@
   margin: 0px auto;
 }
 
-/* .hero_books_div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    margin: 0px auto;
-    margin-top: 100px;
-  } */
+
 
 .catalog_section {
   width: 80%;
@@ -50,21 +49,6 @@
   line-height: 196.187%;
 }
 
-.hero {
-  width: 100%;
-  padding-top: 140px;
-  margin: 0px auto;
-  background-color: var(--background-color-light);
-}
-
-.hero_section {
-  width: 80%;
-  margin: 0px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background-color-light);
-}
 
 .hero_content_div {
   display: flex;
