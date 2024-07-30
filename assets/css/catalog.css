@@ -120,10 +120,9 @@
 }
 
 .med-product-card .related-prod-detail button {
-  margin-top: 20px;
-  width: 136px;
-  height: 29px;
-  border-radius: 3px 0px 0px 0px;
+  margin-top: 10px;
+  padding: 6px 32px;
+  border-radius: 3px;
   background-color: var(--orange-color);
   color: var(--text-color-white);
   border: none;
@@ -131,6 +130,7 @@
   font-size: 12px;
   font-weight: 900;
   line-height: 23.54px;
+  text-transform: uppercase;
   box-shadow: rgba(199, 157, 102, 0.78) 0px 2px 5px;
 }
 
