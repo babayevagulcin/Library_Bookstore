@@ -2,13 +2,18 @@ body {
   font-family: Montserrat;
   background-color: var(--background-color-light);
 }
+.master {
+  cursor: pointer;
+}
 /*! ADMIN HEADER */
+.book__header {
+  padding: 48px 58px;
+}
 .book__buttons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 20px;
-  padding: 48px 58px;
 }
 .book__join {
   border: none;
@@ -53,6 +58,23 @@ body {
   line-height: 16.41px;
   color: var(--text-color-brown);
 }
+/*! ADMIN RESPONSIVE HEADER */
+.res_header {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.res_header .book__logo span,
+.res_header .book__content h1 {
+  color: var(--text-color-red);
+}
+.res_header .book__content h4 {
+  color: var(--text-color-brown);
+}
+.res_header .book__content h4::before {
+  color: var(--logo-before-color);
+}
+
 /*! ADMIN NAVBAR */
 .admin_nav {
   background-color: var(--background-color-red);
@@ -116,11 +138,11 @@ body {
 .nav__list_item span.master {
   font-size: 28px;
 }
+/*! ADMIN PANEL */
 .admin_panel {
   width: 75%;
-  position: fixed;
+  position: absolute;
   right: 0;
-  height: 100%;
 }
 .add_book__title {
   font-size: 30px;
@@ -158,7 +180,7 @@ body {
   color: var(--text-color-white);
 }
 .add_book__search {
-  display: flex;
+  display: none;
   flex-direction: column;
   row-gap: 10px;
   background-color: var(--admin-search-bg-color);
@@ -176,4 +198,211 @@ body {
   font-weight: 400;
   line-height: 25.29px;
   color: var(--admin-search-color);
+}
+/*! BOOK FORM */
+.book_form {
+  padding-top: 80px;
+  color: var(--text-color-brown);
+}
+.book_form__title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 35.31px;
+  padding-bottom: 18px;
+}
+#bookForm,
+#aboutForm {
+  padding: 16px 30px 30px 30px;
+  border-radius: 20px;
+  background-color: var(--text-color-white);
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+.book_form__label,
+.book_form__select {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.75px;
+  text-transform: capitalize;
+}
+.book_form__input,
+.book_form__select {
+  outline: none;
+  border: 1px solid #e2e6ee;
+  padding: 8px 12px 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 18px 0px #9ea8bd4f;
+}
+textarea {
+  resize: none;
+}
+.book_form__label__check {
+  flex-direction: row;
+}
+input[type="checkbox"] {
+  accent-color: var(--admin-orange-color);
+  cursor: pointer;
+}
+.book_form__label_new {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+select {
+  appearance: none;
+  cursor: pointer;
+}
+.book_form__label_new .icon-plus {
+  font-size: 12px;
+  border: 1px solid #e2e6ee;
+  border-radius: 5px;
+  padding: 2px;
+}
+.book_form__modal {
+  display: none;
+}
+.book_form__modal_btn {
+  margin-top: 10px;
+  background-color: transparent;
+  border: 1px solid #e2e6ee;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: Roboto;
+  font-size: 12px;
+}
+.book_form__btn {
+  background-color: var(--admin-orange-color);
+  color: var(--text-color-white);
+  border: none;
+  padding: 12px 24px 12px 24px;
+  border-radius: 10px;
+  width: 100%;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.41px;
+}
+/*! ABOUT STORE */
+.about_store,
+.join_us,
+.books,
+.contact_us {
+  padding-top: 100px;
+}
+.about_store__title,
+.admin_table__title {
+  font-family: Montserrat;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 58.86px;
+}
+/*! JOIN US */
+.admin_table__title {
+  color: var(--text-color-black);
+  text-transform: capitalize;
+  padding-bottom: 10px;
+}
+.join_us__table {
+  width: 50%;
+}
+.table_wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  background-color: var(--background-color-red);
+  color: var(--text-color-white);
+}
+th,
+td {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.1px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  box-shadow: 0px 1px 0px 0px #e6e7e9 inset;
+  vertical-align: middle;
+}
+tbody tr:nth-child(odd) {
+  background-color: var(--admin-table-first-bg);
+}
+table tr:nth-child(even) {
+  background-color: var(--admin-table-second-bg);
+}
+/*! BOOKS */
+.books__list_item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.table_img {
+  width: 27px;
+  height: 36px;
+}
+.table_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contact_us {
+  padding-bottom: 200px;
+}
+@media only screen and (max-width: 991px) {
+  /*! ADMIN NAVBAR */
+  .admin_nav {
+    width: 30%;
+  }
+  .admin_panel {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    margin: 0;
+  }
+  /*! ADMIN HEADER */
+  .book__header {
+    padding: 10px 30px 40px 16px;
+  }
+  .res_header {
+    display: flex;
+  }
+  .book__join {
+    display: none;
+  }
+  /*! ADMIN NAVBAR */
+  .admin_nav {
+    display: none;
+  }
+  .admin_panel {
+    width: 100%;
+  }
+  /*! MAIN SECTION */
+  .add_book,
+  .book_form__title,
+  .admin_table__title {
+    padding: 14px;
+  }
+  .add_book__title {
+    padding-bottom: 10px;
+  }
+  .table_wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  table {
+    min-width: 600px;
+  }
 }

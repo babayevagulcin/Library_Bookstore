@@ -1,50 +1,30 @@
-.about-store {
-  text-align: center;
-  margin-bottom: 50px;
-}
-.about-store h1 {
-  font-size: 36px;
-  color: #333;
-}
-.about-store p {
-  max-width: 686px;
-  height: 253px;
-  top: 266px;
-  left: 215px;
-}
-
-.book-display {
-  width: 570px;
-  height: 310px;
-  top: 266px;
-  left: 973px;
-}
 .about {
+  font-family: Montserrat;
   display: flex;
   gap: 70px;
   padding-top: 100px;
   margin-bottom: 100px;
-  font-family: Montserrat;
 }
-
 .about_content {
   width: 70%;
-  
 }
 
 .about_content h1 {
   font-size: 36px;
   font-weight: 900;
   line-height: 70.63px;
-  text-align: left;
 }
 
 .about_content p {
-  
   font-size: 18px;
   font-weight: 400;
   line-height: 35.31px;
-  text-align: left;
+}
+
+.about_content p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 35.31px;
 }
 
 .book_images {
@@ -56,4 +36,14 @@
   width: 100%;
 }
 
+@media only screen and (max-width: 767px) {
+  .about {
+    flex-direction: column-reverse;
+    padding-top: 30px;
+  }
 
+  .about_content {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
