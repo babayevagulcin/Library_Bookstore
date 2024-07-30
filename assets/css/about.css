@@ -1,6 +1,7 @@
 .about {
   font-family: Montserrat;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 70px;
   padding-top: 100px;

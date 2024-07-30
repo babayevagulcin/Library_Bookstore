@@ -1,185 +1,203 @@
-.container .container_header {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
+.container_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 100px;
 }
 
-.container .container_header h3 {
-    font-family: Montserrat;
-    font-size: 25px;
-    font-weight: 900;
-    line-height: 49.05px;
-    color: #241400;
+.container_header h3 {
+  font-family: Montserrat;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 49.05px;
+  color: var(--text-color-brown);
 }
 
-.container .container_header nav {
-    margin-right: 300px;
+.container_header nav {
+  width: 70%;
 }
 
-.container .container_header nav ul {
-    display: flex;
-    gap: 40px;
+.container_header nav ul {
+  display: flex;
+  gap: 40px;
 }
-
-.container .container_header nav ul li a {
-    text-decoration: none;
-    font-family: Montserrat;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 25.5px;
-    color: #241400;
+.container_header nav a {
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 25.5px;
+  color: var(--text-color-brown);
+  transition: color 0.3s ease-in-out;
+  white-space: nowrap;
 }
-
+.container_header nav a:hover {
+  color: var(--orange-color);
+}
 
 .med-related-prod-wrap .med-rel-prod-slider {
-    height: 360px;
-    display: flex;
-    column-gap: 50px;
-    margin-top: 55px;
-    overflow: auto;
-    padding: 5px;
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-    scroll-behavior: smooth;
+  height: 360px;
+  display: flex;
+  column-gap: 50px;
+  margin-top: 55px;
+  overflow: auto;
+  padding: 5px;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  scroll-behavior: smooth;
 }
 
 .med-related-prod-wrap .med-rel-prod-slider::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-
 
 .med-rel-prod-slider .med-product-card {
-    position: relative;
-    width: 184px;
-    height: 332px;
-    display: flex;
-    flex-direction: column;
-    grid-auto-rows: min-content auto;
-    background: #FFFFFF;
-    text-align: center;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    flex-shrink: 0;
-    cursor: pointer;
-    overflow: hidden;
+  position: relative;
+  width: 184px;
+  height: 332px;
+  display: flex;
+  flex-direction: column;
+  grid-auto-rows: min-content auto;
+  background: #ffffff;
+  text-align: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  flex-shrink: 0;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-.med-rel-prod-slider .med-product-card  .new-label {
-    position: absolute;
-    width: 50px;
-    height: 15px;
-    top: 0;
-    right: 0;
-    box-shadow: rgba(199, 157, 102, 0.78) 0px 2px 5px;
-    text-align: center;
-    background-color: #EB5757;
-    color: white;
-    border-radius: 3px;
-    font-family: Montserrat;
-    font-size: 9px;
-    font-weight: 900;
-    line-height: 17.66px;
+.med-rel-prod-slider .med-product-card .new-label {
+  position: absolute;
+  width: 50px;
+  height: 15px;
+  top: 0;
+  right: 0;
+  box-shadow: rgba(199, 157, 102, 0.78) 0px 2px 5px;
+  text-align: center;
+  background-color: #eb5757;
+  color: white;
+  border-radius: 3px;
+  font-family: Montserrat;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 17.66px;
 }
 
 .med-rel-prod-slider .med-product-card:hover .related-prod-img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .med-product-card .related-prod-wrapper {
-    padding: 25px;
-    height: 220px;
-    width: 100%;
-    overflow: hidden;
+  padding: 25px;
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .med-product-card .related-prod-wrapper .related-prod-img {
-    height: auto;
-    width: 100%;
-    object-fit: contain;
-    transition: 0.5s all ease-in-out;
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+  transition: 0.5s all ease-in-out;
 }
 
 .med-product-card .related-prod-detail .rel-med-name {
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 27.47px;
-    color: #241400;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 27.47px;
+  color: var(--text-color-brown);
 }
 
 .med-product-card .related-prod-detail .rel-no-of-tab {
-    font-family: Montserrat;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 23.54px;
-    color: #241400;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 23.54px;
+  color: var(--text-color-brown);
 }
 
 .med-product-card .related-prod-detail button {
-    margin-top: 20px;
-    width: 136px;
-    height: 29px;
-    border-radius: 3px 0px 0px 0px;
-    background-color: #E16A00;
-    color: #ffffff;
-    border: none;
-    font-family: Montserrat;
-    font-size: 12px;
-    font-weight: 900;
-    line-height: 23.54px;
-    box-shadow: rgba(199, 157, 102, 0.78)  0px 2px 5px;
+  margin-top: 20px;
+  width: 136px;
+  height: 29px;
+  border-radius: 3px 0px 0px 0px;
+  background-color: var(--orange-color);
+  color: var(--text-color-white);
+  border: none;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 23.54px;
+  box-shadow: rgba(199, 157, 102, 0.78) 0px 2px 5px;
 }
 
-
-
 .med-related-prod-wrap {
-    position: relative;
-    /* overflow: hidden; */
-    /* display: flex; */
+  position: relative;
 }
 
 .med-related-prod-wrap .sol_button {
-    cursor: pointer;
-    position: absolute;
-    top: 40%;
-    left: -50px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    font-size: 50px;
-    color: #dfe1e5;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  left: -50px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  font-size: 50px;
+  color: #dfe1e5;
 }
 
 .med-related-prod-wrap .sag_button {
-    cursor: pointer;
-    position: absolute;
-    top: 40%;
-    right: -50px;
-    font-size: 50px;
-    color: #dfe1e5;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  right: -50px;
+  font-size: 50px;
+  color: #dfe1e5;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
 .btn-left {
-    display: none;
+  display: none;
 }
 
 .container .catalog_cards {
-    margin-top: 110px;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
+  margin-top: 110px;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .container .catalog_cards .catalog_header h5 {
-    font-family: Montserrat;
-    font-size: 25px;
-    font-weight: 900;
-    line-height: 49.05px;
-    color: #241400;
+  font-family: Montserrat;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 49.05px;
+  color: var(--text-color-brown);
+}
+@media only screen and (max-width: 767px) {
+  .container_header {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .container_header nav {
+    width: 100%;
+  }
+  .med-related-prod-wrap .sol_button,
+  .med-related-prod-wrap .sag_button {
+    display: none;
+  }
+  .container_header nav ul {
+    gap: 12px;
+  }
+  .container_header nav a {
+    font-size: 10px;
+    line-height: 20px;
+  }
 }

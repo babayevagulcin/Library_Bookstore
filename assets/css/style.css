@@ -1,7 +1,5 @@
 .hero {
-  
   padding-top: 100px;
-  
 }
 .hero_section {
   display: flex;
@@ -29,9 +27,6 @@
   align-items: center;
   margin: 0px auto;
 }
-
-
-
 .catalog_section {
   width: 80%;
   display: flex;
@@ -48,7 +43,6 @@
   font-weight: 900;
   line-height: 196.187%;
 }
-
 
 .hero_content_div {
   display: flex;
@@ -133,13 +127,9 @@
 
 .catalog_items button {
   color: var(--text-color-black);
-
-  font-family: var(--crimsontext);
   font-size: 14px;
   font-weight: 700;
   font-family: Montserrat, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
   line-height: 28px;
   padding: 24px 65px;
   border: none;
