@@ -33,7 +33,7 @@ const bindCarouselEvents = (containerId) => {
             btn_right.style.display = "block"
         }
 
-        if (scrollLeft == 0) {
+        if (scrollLeft === 0) {
             btn_left.style.display = "none"
         } else if (scrollLeft > 0) {
             btn_left.style.display = "block"
@@ -47,5 +47,4 @@ window.addEventListener('DOMContentLoaded', function () {
     bindCarouselEvents('med-related-prod-wrapper');
     bindCarouselEvents('med-related-prod-wrapper2');
     bindCarouselEvents('med-related-prod-wrapper3');
-
 });
