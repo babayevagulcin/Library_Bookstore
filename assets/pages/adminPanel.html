@@ -13,6 +13,327 @@
     <title>Admin Panel</title>
   </head>
   <body>
+    <header class="book__header">
+      <div class="book__buttons">
+        <button class="book__join">
+          <span class="master icon-Profile book__profile_icon"></span>
+          <span class="book__join_us">Admin</span>
+        </button>
+      </div>
+      <div class="res_header">
+        <div class="book__logo">
+          <span class="master icon-books-stack"></span>
+          <div class="book__content">
+            <h1>library</h1>
+            <h4>Admin Panel</h4>
+          </div>
+        </div>
+        <span class="master icon-hamburger"></span>
+      </div>
+    </header>
+    <nav class="admin_nav">
+      <div class="book__logo">
+        <span class="master icon-books-stack"></span>
+        <div class="book__content">
+          <h1>library</h1>
+          <h4>Admin Panel</h4>
+        </div>
+      </div>
+      <ul class="nav__list">
+        <li class="nav__list_item">
+          <a href="../../index.html ">
+            <span class="master icon-books-stack"></span>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav__list_item">
+          <a href="#">
+            <span class="master icon-books-stack"></span>
+            <span>Books</span>
+          </a>
+        </li>
+        <li class="nav__list_item">
+          <a href="#">
+            <span class="master icon-books-stack"></span>
+            <span>about</span>
+          </a>
+        </li>
+        <li class="nav__list_item">
+          <a href="#">
+            <span class="master icon-books-stack"></span>
+            <span>Join us</span>
+          </a>
+        </li>
+        <li class="nav__list_item">
+          <a href="#">
+            <span class="master icon-books-stack"></span>
+            <span>contact</span>
+          </a>
+        </li>
+        <li class="nav__list_item">
+          <a href="#">
+            <span class="master icon-books-stack"></span>
+            <span>logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main class="admin_panel">
+      <div class="container">
+        <section class="add_book">
+          <p class="add_book__title">Add book</p>
+          <form action="" class="add_book__form">
+            <p class="add_book__form_title">Search book</p>
+            <label for="" class="add_book__label">
+              <input
+                type="text"
+                name="search"
+                id="searchInput"
+                class="add_book__input"
+                placeholder="Dan Brown"
+              />
+              <span class="master icon-search"></span>
+            </label>
+            <div class="add_book__search">
+              <p>
+                <span class="master icon-clock"> </span>
+                <span>Dan Brown Davinc</span>
+              </p>
+              <p>
+                <span class="master icon-clock"> </span>
+                <span>Dan Brown Davinc</span>
+              </p>
+            </div>
+          </form>
+        </section>
+
+        <section class="book_form">
+          <p class="book_form__title">Book form</p>
+          <form action="" id="bookForm">
+            <label for="bookName" class="book_form__label">
+              Book Name
+              <input
+                type="text"
+                name="name"
+                id="bookName"
+                class="book_form__input"
+              />
+            </label>
+            <label for="authorName" class="book_form__label">
+              Author Name
+              <input
+                type="text"
+                name="name"
+                id="authorName"
+                class="book_form__input"
+              />
+            </label>
+            <label for="imgUrl" class="book_form__label">
+              Book Image Url
+              <input
+                type="text"
+                name="url"
+                id="imgUrl"
+                class="book_form__input"
+              />
+            </label>
+            <label
+              for="newBook"
+              class="book_form__label book_form__label__check"
+            >
+              New
+              <input type="checkbox" id="newBook" class="book_form__input" />
+            </label>
+            <label for="description" class="book_form__label">
+              Description
+              <textarea
+                name="description"
+                id="description"
+                class="book_form__input"
+              ></textarea>
+            </label>
+            <label for="bookType" class="book_form__label">
+              <span class="book_form__label_new"
+                >Book Type <span class="master icon-plus"></span
+              ></span>
+              <select name="bookType" id="bookType" class="book_form__select">
+                <option value="fantastic">Fantastic</option>
+                <option value="self-development">Self-development</option>
+                <option value="baby">Baby</option>
+                <option value="classic">Classic</option>
+              </select>
+            </label>
+            <div id="formModal" class="book_form__modal">
+              <label for="newCategoryName" class="book_form__label"
+                >Category Name
+                <input
+                  type="text"
+                  id="newCategoryName"
+                  name="newCategoryName"
+                  class="book_form__input"
+                />
+              </label>
+              <button type="submit" class="book_form__modal_btn btn">
+                Add Category
+              </button>
+            </div>
+            <button type="submit" class="book_form__btn btn">Add</button>
+          </form>
+        </section>
+
+        <section class="about_store">
+          <p class="about_store__title">About store</p>
+          <form action="" id="aboutForm">
+            <label for="" class="book_form__label">
+              title
+              <input
+                type="text"
+                name="name"
+                id="bookName"
+                class="book_form__input"
+              />
+            </label>
+            <label for="" class="book_form__label">
+              Book Image Url
+              <input
+                type="text"
+                name="url"
+                id="imgUrl"
+                class="book_form__input"
+              />
+            </label>
+            <label for="" class="book_form__label">
+              Description
+              <textarea
+                name="description"
+                id="description"
+                class="book_form__input"
+              ></textarea>
+            </label>
+            <button type="submit" class="book_form__btn btn">
+              About info add
+            </button>
+          </form>
+        </section>
+
+        <section class="join_us">
+          <p class="admin_table__title">join us</p>
+          <div class="table_wrapper">
+            <table class="join_us__table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Full Name</th>
+                  <th>Email Address</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Audrey Mckinney</td>
+                  <td>lisa.watson@example.com</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Savannah Howard</td>
+                  <td>jeff.brown@example.com</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Morris Cooper</td>
+                  <td>terra.hamilton@example.com</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Victoria Lane</td>
+                  <td>deanna.curtis@example.com</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="books">
+          <p class="admin_table__title">Books</p>
+          <div class="table_wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Author</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="books__list_item">
+                    <span class="table_img">
+                      <img src="../img/book_3.png" alt="Book Image" />
+                    </span>
+                    <span>Angels</span>
+                  </td>
+                  <td>Lorem ipsum test...</td>
+                  <td>Detectiv</td>
+                  <td>Dan Brown</td>
+                  <td><span class="master icon-trash"></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="contact_us">
+          <p class="admin_table__title">Contact Us</p>
+          <div class="table_wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Full Name</th>
+                  <th>Address</th>
+                  <th>Email Address</th>
+                  <th>Phone Number</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Audrey Mckinney</td>
+                  <td>1473 Ranchview Dr undefined San Jose</td>
+                  <td>lisa.watson@example.com</td>
+                  <td>(209) 555-0104</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Savannah Howard</td>
+                  <td>8445 Railroad St undefined Tampa</td>
+                  <td>jeff.brown@example.com</td>
+                  <td>(201) 555-0124</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Morris Cooper</td>
+                  <td>8844 W Sherman Dr undefined Desoto</td>
+                  <td>terra.hamilton@example.com</td>
+                  <td>(805) 555-0125</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Victoria Lane</td>
+                  <td>1921 Ranchview Dr undefined San Francisco</td>
+                  <td>deanna.curtis@example.com</td>
+                  <td>(704) 555-0127</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
     <script src="../js/adminPanel.js"></script>
   </body>
 </html>
