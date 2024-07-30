@@ -1,211 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--* ICON LINK -->
-    <link rel="stylesheet" href="../icons/style.css"/>
+    <link rel="stylesheet" href="../icons/style.css" />
     <!--* CSS LINKS -->
-    <link rel="stylesheet" href="../css/reset.css"/>
-    <link rel="stylesheet" href="../css/root.css"/>
-    <link rel="stylesheet" href="../css/head_foot.css"/>
-    <link rel="stylesheet" href="../css/book.css"/>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/root.css" />
+    <link rel="stylesheet" href="../css/head_foot.css" />
+    <link rel="stylesheet" href="../css/book.css" />
 
     <title>Book Page</title>
-</head>
-<body>
-<nav class="book_nav">
-    <div class="container">
+  </head>
+  <body>
+    <nav class="book_nav">
+      <div class="container">
         <div class="book">
-            <div class="book__logo">
-                <span class="master icon-books-stack"></span>
-                <div class="book__content">
-                    <h1>library</h1>
-                    <h4>book store</h4>
-                </div>
+          <div class="book__logo">
+            <span class="master icon-books-stack"></span>
+            <div class="book__content">
+              <h1>library</h1>
+              <h4>book store</h4>
             </div>
-            <ul class="book__list">
-                <li class="book__list_item">
-                    <a href="../../index.html">home</a>
-                </li>
-                <li class="book__list_item">
-                    <a href="./catalog.html" class="active_link">catalog</a>
-                </li>
-                <li class="book__list_item">
-                    <a href="./about.html">about store</a>
-                </li>
-                <li class="book__list_item">
-                    <a href="./contact.html">contact us</a>
-                </li>
-                <li class="book__list_item">
-                    <a href="./search.html">search</a>
-                </li>
-            </ul>
-            <div class="book__buttons">
-                <button class="book__join">
-                    <span class="master icon-Profile book__profile_icon"></span>
-                    <span class="book__join_us">Join us</span>
-                </button>
-                <span class="master icon-hamburger book__hamburger"></span>
-            </div>
+          </div>
+          <ul class="book__list">
+            <li class="book__list_item">
+              <a href="../../index.html">home</a>
+            </li>
+            <li class="book__list_item">
+              <a href="./catalog.html" class="active_link">catalog</a>
+            </li>
+            <li class="book__list_item">
+              <a href="./about.html">about store</a>
+            </li>
+            <li class="book__list_item">
+              <a href="./contact.html">contact us</a>
+            </li>
+            <li class="book__list_item">
+              <a href="./search.html">search</a>
+            </li>
+          </ul>
+          <div class="book__buttons">
+            <button class="book__join">
+              <span class="master icon-Profile book__profile_icon"></span>
+              <span class="book__join_us">Join us</span>
+            </button>
+            <span class="master icon-hamburger book__hamburger"></span>
+          </div>
         </div>
-    </div>
-</nav>
-<main>
-    <div class="container">
+      </div>
+    </nav>
+    <main>
+      <div class="container">
         <div class="book_detail">
-            <div class="book_detail_content">
-                <button type="button"> < BACK</button>
-                <a>2017</a>
-                <h1>Order in Chaos</h1>
-                <span>2 days ago added</span>
-                <p>
-                    Konstantin Koptelovs of Kiev can receive an order on the day of its registration. Customers from
-                    other cities of Ukraine can receive an order within 1-5 days, depending on the location of the
-                    settlement and the selected delivery method. Orders over UAH 1000 are delivered free of charge *.
-                    You can see the available methods, exact terms and cost of delivery during checkout in the order
-                    basket, after selecting the delivery city.
-                    More details
-                </p>
-            </div>
-            <div class="book_images">
-                <div class="new-label">NEW</div>
-                <img src="../img/bigbook.png" alt=""/>
-            </div>
+          <div class="book_detail_content">
+            <button type="button" class="btn">
+              <span class="master icon-chevron_left"></span> BACK
+            </button>
+            <a>2017</a>
+            <h1>Order in Chaos</h1>
+            <span>2 days ago added</span>
+            <p>
+              Konstantin Koptelovs of Kiev can receive an order on the day of
+              its registration. Customers from other cities of Ukraine can
+              receive an order within 1-5 days, depending on the location of the
+              settlement and the selected delivery method. Orders over UAH 1000
+              are delivered free of charge *. You can see the available methods,
+              exact terms and cost of delivery during checkout in the order
+              basket, after selecting the delivery city. <br />
+              More details
+            </p>
+          </div>
+          <div class="book_images">
+            <div class="new-label">NEW</div>
+            <img src="../img/bigbook.png" alt="" />
+          </div>
         </div>
         <div class="comments">
-            <form action="#" class="comment_form">
-                <input
-                        type="text"
-                        name="comment"
-                        class="comment_input"
-                        placeholder="your anonim comment..."
-                />
-                <button type="button" class="comment_button"><span class="master icon-send"></span></button>
-            </form>
-            <div class="comment">
-                <div class="author">
-                    <p>anonim</p>
-                    <p>18:32 today</p>
-                </div>
-                <div class="comment_description">
-                    <p>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</p>
-                </div>
+          <form action="#" class="comment_form">
+            <input
+              type="text"
+              name="comment"
+              class="comment_input"
+              placeholder="your anonim comment..."
+            />
+            <button type="button" class="comment_button">
+              <span class="master icon-send"></span>
+            </button>
+          </form>
+          <div class="comment">
+            <div class="author">
+              <p>anonim</p>
+              <p>18:32 today</p>
             </div>
-            <div class="comment">
-                <div class="author">
-                    <p>anonim</p>
-                    <p>2 days ago</p>
-                </div>
-                <div class="comment_description">
-                    <p>Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into </p>
-                </div>
+            <div class="comment_description">
+              <p>
+                Woah, your project looks awesome! How long have you been coding
+                for? I’m still new, but think I want to dive into React as well
+                soon. Perhaps you can give me an insight on where I can learn
+                React? Thanks!
+              </p>
             </div>
+          </div>
+          <div class="comment">
+            <div class="author">
+              <p>anonim</p>
+              <p>2 days ago</p>
+            </div>
+            <div class="comment_description">
+              <p>
+                Woah, your project looks awesome! How long have you been coding
+                for? I’m still new, but think I want to dive into
+              </p>
+            </div>
+          </div>
         </div>
-    </div>
-</main>
-<footer class="footer">
-    <div class="container">
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
         <div class="footer__social">
-            <h3>Follow us on social media</h3>
-            <div class="footer__social_icons">
-                <a href="https://www.facebook.com/"
-                ><span class="master icon-facebook"></span
-                ></a>
-                <a href="https://x.com/i/flow/login">
-                    <span class="master icon-twitter"></span>
-                </a>
-                <a href="https://www.instagram.com/"
-                ><span class="master icon-instagram"></span
-                ></a>
-                <a
-                        href="https://www.youtube.com/?app=desktop&hl=tr"
-                        class="youtube_icon"
-                ><span class="master icon-youtube"></span
-                ></a>
-            </div>
+          <h3>Follow us on social media</h3>
+          <div class="footer__social_icons">
+            <a href="https://www.facebook.com/"
+              ><span class="master icon-facebook"></span
+            ></a>
+            <a href="https://x.com/i/flow/login">
+              <span class="master icon-twitter"></span>
+            </a>
+            <a href="https://www.instagram.com/"
+              ><span class="master icon-instagram"></span
+            ></a>
+            <a
+              href="https://www.youtube.com/?app=desktop&hl=tr"
+              class="youtube_icon"
+              ><span class="master icon-youtube"></span
+            ></a>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div class="footer__content_bg">
+      <div class="footer__content_bg">
         <div class="container">
-            <div class="footer__content">
-                <div class="book__logo">
-                    <span class="master icon-books-stack"></span>
-                    <div class="book__content">
-                        <h1>library</h1>
-                        <h4>book store</h4>
-                    </div>
-                </div>
-                <div class="footer__lists">
-                    <ul class="footer__list">
-                        <li class="footer__list_item">
-                            <a href="#" class="footer__list_link_title"> Popular </a>
-                        </li>
-                        <li class="footer__list_item"><a href="#"> Programming </a></li>
-                        <li class="footer__list_item">
-                            <a href="#"> Books for children </a>
-                        </li>
-                        <li class="footer__list_item"><a href="#"> Psychology </a></li>
-                        <li class="footer__list_item"><a href="#"> Business </a></li>
-                    </ul>
-                    <ul class="footer__list">
-                        <li class="footer__list_item">
-                            <a href="#" class="footer__list_link_title">Cash</a>
-                        </li>
-                        <li class="footer__list_item"><a href="#">Delivery</a></li>
-                        <li class="footer__list_item"><a href="#">Payment</a></li>
-                        <li class="footer__list_item"><a href="#">Delivery</a></li>
-                        <li class="footer__list_item">
-                            <a href="#">About the store</a>
-                        </li>
-                    </ul>
-                    <ul class="footer__list">
-                        <li class="footer__list_item">
-                            <a href="#" class="footer__list_link_title">Help</a>
-                        </li>
-                        <li class="footer__list_item"><a href="#">Contacts</a></li>
-                        <li class="footer__list_item">
-                            <a href="#">Purchase returns</a>
-                        </li>
-                        <li class="footer__list_item"><a href="#">Buyer help</a></li>
-                    </ul>
-                </div>
-                <ul class="book__list">
-                    <li class="book__list_item">
-                        <a href="../../index.html">home</a>
-                    </li>
-                    <li class="book__list_item">
-                        <a href="./catalog.html">catalog</a>
-                    </li>
-                    <li class="book__list_item">
-                        <a href="./about.html">about store</a>
-                    </li>
-                    <li class="book__list_item">
-                        <a href="./contact.html">contact us</a>
-                    </li>
-                    <li class="book__list_item">
-                        <a href="./search.html">search</a>
-                    </li>
-                </ul>
-                <div class="footer__info">
-                    <a href="tel:+98712345678">+38 (071) 339-16-26</a>
-                    <button class="footer__info_button">Request a call</button>
-                </div>
+          <div class="footer__content">
+            <div class="book__logo">
+              <span class="master icon-books-stack"></span>
+              <div class="book__content">
+                <h1>library</h1>
+                <h4>book store</h4>
+              </div>
             </div>
-            <div class="footer__privacy">
-                <p class="footer__privacy_library">
-                    All rights reserved © 2003-2024 LIBRARY TERMS OF USE | Privacy
-                    Policy
-                </p>
-                <p class="footer__privacy_eacamp">
-                    Library BookStore EACamp <br/>
-                    © 2003-2024
-                </p>
+            <div class="footer__lists">
+              <ul class="footer__list">
+                <li class="footer__list_item">
+                  <a href="#" class="footer__list_link_title"> Popular </a>
+                </li>
+                <li class="footer__list_item"><a href="#"> Programming </a></li>
+                <li class="footer__list_item">
+                  <a href="#"> Books for children </a>
+                </li>
+                <li class="footer__list_item"><a href="#"> Psychology </a></li>
+                <li class="footer__list_item"><a href="#"> Business </a></li>
+              </ul>
+              <ul class="footer__list">
+                <li class="footer__list_item">
+                  <a href="#" class="footer__list_link_title">Cash</a>
+                </li>
+                <li class="footer__list_item"><a href="#">Delivery</a></li>
+                <li class="footer__list_item"><a href="#">Payment</a></li>
+                <li class="footer__list_item"><a href="#">Delivery</a></li>
+                <li class="footer__list_item">
+                  <a href="#">About the store</a>
+                </li>
+              </ul>
+              <ul class="footer__list">
+                <li class="footer__list_item">
+                  <a href="#" class="footer__list_link_title">Help</a>
+                </li>
+                <li class="footer__list_item"><a href="#">Contacts</a></li>
+                <li class="footer__list_item">
+                  <a href="#">Purchase returns</a>
+                </li>
+                <li class="footer__list_item"><a href="#">Buyer help</a></li>
+              </ul>
             </div>
+            <ul class="book__list">
+              <li class="book__list_item">
+                <a href="../../index.html">home</a>
+              </li>
+              <li class="book__list_item">
+                <a href="./catalog.html">catalog</a>
+              </li>
+              <li class="book__list_item">
+                <a href="./about.html">about store</a>
+              </li>
+              <li class="book__list_item">
+                <a href="./contact.html">contact us</a>
+              </li>
+              <li class="book__list_item">
+                <a href="./search.html">search</a>
+              </li>
+            </ul>
+            <div class="footer__info">
+              <a href="tel:+98712345678">+38 (071) 339-16-26</a>
+              <button class="footer__info_button">Request a call</button>
+            </div>
+          </div>
+          <div class="footer__privacy">
+            <p class="footer__privacy_library">
+              All rights reserved © 2003-2024 LIBRARY TERMS OF USE | Privacy
+              Policy
+            </p>
+            <p class="footer__privacy_eacamp">
+              Library BookStore EACamp <br />
+              © 2003-2024
+            </p>
+          </div>
         </div>
-    </div>
-</footer>
-<script src="../js/book.js"></script>
-</body>
+      </div>
+    </footer>
+    <script src="../js/book.js"></script>
+  </body>
 </html>
