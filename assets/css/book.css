@@ -13,7 +13,7 @@
   flex-direction: column;
 }
 
-.book_page button {
+.book_detail_content button {
   display: flex;
   justify-content: center;
   align-items: center;
