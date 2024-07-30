@@ -1,169 +1,171 @@
-.container .book_detail {
-    font-family: Montserrat;
-    display: flex;
-    justify-content: flex-end;
-    /*align-items: center;*/
-    gap: 70px;
-    padding-top: 100px;
-    margin-bottom: 100px;
+.book_detail {
+  font-family: Montserrat;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding-top: 100px;
+  margin-bottom: 100px;
 }
 
-.container .book_detail_content {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
+.book_detail_content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
-.container .book_detail_content button {
-    width: 100px;
-    height: 30px;
-    cursor: pointer;
-    box-shadow: rgba(199, 157, 102, 0.78) 0px 2px 5px;
-    background-color: #E16A00;
-    font-family: Montserrat;
-    font-size: 12px;
-    font-weight: 900;
-    line-height: 23.54px;
-    border: none;
-    color: white;
-    border-radius: 3px;
-    margin-bottom: 80px;
+.book_page button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 100px;
+  box-shadow: rgba(199, 157, 102, 0.78) 0px 2px 5px;
+  background-color: var(--orange-color);
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 23.54px;
+  border: none;
+  color: var(--text-color-white);
+  border-radius: 3px;
+  margin-bottom: 80px;
+}
+.book_detail_content button .icon-chevron_left {
+  font-size: 10px;
+  font-weight: 900;
+}
+.book_detail_content a {
+  background-color: #2f80ed;
+  color: white;
+  width: 70px;
+  height: 25px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 23.54px;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: rgba(199, 157, 102, 0.78) 0px 2px 5px;
 }
 
-.container .book_detail_content a {
-    background-color: #2F80ED;
-    color: white;
-    width: 70px;
-    height: 25px;
-    font-family: Montserrat;
-    font-size: 12px;
-    font-weight: 900;
-    line-height: 23.54px;
-    text-align: center;
-    border-radius: 2px;
-    box-shadow: rgba(199, 157, 102, 0.78) 0px 2px 5px;
+.book_detail_content h1 {
+  font-family: Montserrat;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 68.67px;
+  text-align: left;
 }
 
-.container .book_detail_content h1 {
-    font-family: Montserrat;
-    font-size: 35px;
-    font-weight: 700;
-    line-height: 68.67px;
-    text-align: left;
+.book_detail_content span {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 31.39px;
+  text-align: left;
 }
 
-.container .book_detail_content span {
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 31.39px;
-    text-align: left;
+.book_detail_content p {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 35.31px;
+  text-align: left;
 }
-
-.container .book_detail_content p {
-    font-family: Montserrat;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 35.31px;
-    text-align: left;
-}
-
 
 .book_images {
-    position: relative;
-    /*background-color: #720418;*/
-    width: 570px;
+  position: relative;
+  width: 379px;
+  height: 529px;
 }
 
 .book_images .new-label {
-    padding-top: 3px;
-    position: absolute;
-    width: 94px;
-    height: 28px;
-    top: 0;
-    right: 0;
-    box-shadow: rgba(199, 157, 102, 0.78) 0px 2px 5px;
-    text-align: center;
-    background-color: #eb5757;
-    color: white;
-    border-radius: 3px;
-    font-family: Montserrat;
-    font-size: 12px;
-    font-weight: 900;
-    line-height: 23.54px;
-    text-align: center;
+  padding-top: 3px;
+  position: absolute;
+  width: 94px;
+  height: 28px;
+  top: 0;
+  right: 0;
+  box-shadow: rgba(199, 157, 102, 0.78) 0px 2px 5px;
+  text-align: center;
+  background-color: #eb5757;
+  color: white;
+  border-radius: 3px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 23.54px;
+  text-align: center;
 }
-
 
 .book_images img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-.container .comments{
-    display: flex;
-    flex-direction: column;
+.comments {
+  display: flex;
+  flex-direction: column;
 }
-.container .comments .comment_form{
-    text-align: center;
-    align-items: center;
-    display: flex;
-    margin-bottom: 55px;
+.comments .comment_form {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: 55px;
 }
-.container .comments .comment_form .comment_input {
-    outline: none;
-    width: 50%;
-    padding: 20px 36px;
-    border: 1px solid var(--form-border-color);
-    border-radius: 5px;
-    border: none;
-    box-shadow: rgba(222, 208, 178, 0.51) 0px 2px 5px;
+.comments .comment_form .comment_input {
+  outline: none;
+  width: 50%;
+  padding: 20px 36px;
+  border: 1px solid var(--form-border-color);
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(222, 208, 178, 0.51) 0px 2px 5px;
 }
 
-.container .comments .comment_form .comment_button{
-    width: 60.11px;
-    height: 56px;
-    border-radius: 5px;
-    background-color: #E16A00;
-    color: white;
-    font-size: 25px;
-    border: none;
+.comments .comment_form .comment_button {
+  width: 60.11px;
+  height: 56px;
+  border-radius: 5px;
+  background-color: #e16a00;
+  color: white;
+  font-size: 25px;
+  border: none;
 }
 
 .comment_input::placeholder {
-    font-family: Crimson Text;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 29.9px;
+  font-family: Crimson Text;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 29.9px;
 }
 
-.container .comments .comment{
-    background-color: #FFFFFF;
-    width: 686px;
-    height: 167px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 45px;
-    box-shadow: rgba(222, 208, 178, 0.51) 0px 2px 5px;
+.comments .comment {
+  background-color: #ffffff;
+  width: 686px;
+  height: 167px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 45px;
+  box-shadow: rgba(222, 208, 178, 0.51) 0px 2px 5px;
 }
 
-.container .comments .comment .author{
-    display: flex;
-    padding: 20px;
-    font-family: Rubik;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 18.96px;
-    text-align: left;
-    gap: 30px;
+.comments .comment .author {
+  display: flex;
+  padding: 20px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.96px;
+  text-align: left;
+  gap: 30px;
 }
 
-.container .comments .comment .comment_description{
-    padding: 20px;
-    text-align: left;
-    font-family: Rubik;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+.comments .comment .comment_description {
+  padding: 20px;
+  text-align: left;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
