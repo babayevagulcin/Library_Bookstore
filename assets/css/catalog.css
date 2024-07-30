@@ -73,7 +73,7 @@
     height: 15px;
     top: 0;
     right: 0;
-    box-shadow: rgba(199, 157, 102, 0.78) 0px 3px 8px;
+    box-shadow: rgba(199, 157, 102, 0.78) 0px 2px 5px;
     text-align: center;
     background-color: #EB5757;
     color: white;
@@ -130,6 +130,7 @@
     font-size: 12px;
     font-weight: 900;
     line-height: 23.54px;
+    box-shadow: rgba(199, 157, 102, 0.78)  0px 2px 5px;
 }
 
 
