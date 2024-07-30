@@ -254,6 +254,7 @@
 
 .about_store_title {
   color: var(--text-color-brown);
+  font-family: Montserrat, sans-serif;
   font-size: 25px;
   font-weight: 900;
   margin-bottom: 32px;
