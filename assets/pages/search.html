@@ -10,10 +10,7 @@
     <link rel="stylesheet" href="../css/root.css" />
     <link rel="stylesheet" href="../css/head_foot.css" />
     <link rel="stylesheet" href="../css/search.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 
     <title>Search Page</title>
   </head>
@@ -56,50 +53,36 @@
       </div>
     </nav>
 
-    <main class="main">
-      <div class="mistakeResult alert">Mistake:Please fill this blank</div>
-      <div class="notAvailable alert">Mistake:Not available</div>
-      <section class="holder">
-        <div class="box1">
-          <h1 class="search">Search</h1>
-          <input
-            class="inputSearch"
-            id="inputSearch"
-            placeholder="Book name"
-            type="search"
-          />
-          <button class="inputBtn" type="submit" id="inputBtn">Search</button>
-        </div>
-
-        <div class="swiper">
-          <div class="wrapper">
-            <div class="slider">
-              <div class="box2">
-                <div class="book1">
-                  <img class="book" src="../img/book_1.png" alt="book" />
-                </div>
-                <div class="book_title">
-                  <h2 class="book_name">Order in Chaos</h2>
-                  <p class="author">Konstantin Koptelov</p>
-                  <p class="title">
-                    We work without holidays and weekends! Residents of Kiev can
-                    receive an order on the day of its registration. Customers
-                    from other cities of Ukraine can receive an order within 1-5
-                    days, depending on the location of the settlement and the
-                    selected delivery method. Orders over UAH 1000 are delivered
-                    free of charge *. You can see the available methods, exact
-                    terms and cost of delivery during checkout in the order
-                    basket, after selecting the delivery city
-                  </p>
-                </div>
+    <div class="search-section">
+      <div class="search-container">
+          <h1>Search</h1>
+          <input type="text" placeholder="Search for books" />
+          <button class="search-button">Search</button>
+      </div>
+      <div class="slider-container">
+          <div class="book-slider">
+              <div class="book-card">
+                  <img src="../img/book_1.png" alt="Book Cover 1" class="book-cover"/>
+                  <div class="book-info">
+                      <h2>Order in Chaos</h2>
+                      <h3>Konstantin Koptelov</h3>
+                      <p>  We work without holidays and weekends! Residents of Kiev can receive an order on the day of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are delivered  free of charge *. You can see the available methods, exact terms and cost of delivery during checkout in the order basket, after selecting the delivery city</p>
+                  </div>
               </div>
-            </div>
+              <div class="book-card">
+                  <img src="../img/book_2.png" alt="Book Cover 2" class="book-cover"/>
+                  <div class="book-info">
+                      <h2>Book Title 2</h2>
+                      <h3>Author 2</h3>
+                      <p>Description for Book 2</p>
+                  </div>
+              </div>
+              
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </section>
-    </main>
+          <button class="prev-btn">❮</button>
+          <button class="next-btn">❯</button>
+      </div>
+  </div>
 
     <footer class="footer">
       <div class="container">
@@ -107,8 +90,7 @@
           <h3>Follow us on social media</h3>
           <div class="footer__social_icons">
             <a href="https://www.facebook.com/"
-              ><span class="master icon-facebook"></span
-            ></a>
+              ><span class="master icon-facebook"></span></a>
             <a href="https://x.com/i/flow/login">
               <span class="master icon-twitter"></span>
             </a>
