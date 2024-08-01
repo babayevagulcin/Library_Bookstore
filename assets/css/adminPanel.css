@@ -426,9 +426,17 @@ table tr:nth-child(even) {
   }
   .res.admin_nav {
     display: block;
+    padding: 15px 10px;
   }
   .res .book__logo .icon-x {
     display: block;
+    padding-left: 12px;
+  }
+  .res .book__logo {
+    padding-bottom: 50px;
+  }
+  .res .nav__list {
+    padding-left: 15px;
   }
   /*! ADMIN NAVBAR */
   .admin_nav {
