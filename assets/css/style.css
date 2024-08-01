@@ -115,6 +115,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+  flex-wrap: wrap;
   width: 100%;
 }
 .area_inner_div {
@@ -172,10 +173,58 @@
   font-weight: 400;
   line-height: 23.54px;
 }
+@media only screen and (max-width: 991px) {
+  /*! MAIN  */
+  /*? ABOUT STORE SECTION  */
+  .about_store_area {
+    justify-content: flex-start;
+    gap: 50px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   /*! NAVBAR  */
-
   .book__profile_icon {
     display: block;
+  }
+  /*! MAIN  */
+  .hero {
+    padding-top: 50px;
+  }
+
+  /*? HERO SECTION  */
+  .hero_section {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  .hero_content_div {
+    width: 100%;
+  }
+  .hero_content_div h1 {
+    font-size: 28px;
+    line-height: 54.93px;
+  }
+
+  .hero_content_div p {
+    width: 100%;
+  }
+
+  .hero_content_div a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero_books_div {
+    width: 100%;
+  }
+
+  /*? CATALOG SECTION  */
+  .catalog_items {
+    grid-template-columns: 1fr;
+  }
+  /*? ABOUT STORE SECTION  */
+  .about_store_area {
+    gap: 0;
   }
 }
