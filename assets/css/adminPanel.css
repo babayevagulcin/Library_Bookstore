@@ -75,6 +75,10 @@ body {
   color: var(--logo-before-color);
 }
 
+/*! RESPONSIVE NAVBAR */
+.res.admin_nav {
+  width: 80%;
+}
 /*! ADMIN NAVBAR */
 .admin_nav {
   background-color: var(--background-color-red);
@@ -91,9 +95,14 @@ body {
   align-items: center;
   gap: 8px;
 }
+
 .book__logo span {
   font-size: 52px;
   color: var(--text-color-white);
+}
+.book__logo .icon-x {
+  display: none;
+  font-size: 40px;
 }
 .book__content h1 {
   font-size: 14px;
@@ -117,7 +126,7 @@ body {
   color: var(--text-color-white);
 }
 .nav__list {
-  padding-top: 10px;
+  padding-top: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,6 +136,28 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.nav__list_item a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+.nav__list_item a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+.nav__list_item a:hover::before {
+  transform: scaleX(1);
 }
 .nav__list_item span {
   font-size: 18px;
@@ -173,12 +204,18 @@ body {
   width: 395px;
 }
 .add_book__label .icon-search {
-  padding: 8px 16px 8px 16px;
+  padding: 8px 16px;
   border-radius: 34px;
   background-color: var(--admin-orange-color);
   font-size: 24px;
   color: var(--text-color-white);
+  transition: border-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
 }
+.add_book__label .icon-search:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
 .add_book__search {
   display: none;
   flex-direction: column;
@@ -381,6 +418,17 @@ table tr:nth-child(even) {
   }
   .book__join {
     display: none;
+  }
+  /*! RESPONSIVE NAVBAR */
+  .res .admin_panel,
+  .res .res_header {
+    display: none;
+  }
+  .res.admin_nav {
+    display: block;
+  }
+  .res .book__logo .icon-x {
+    display: block;
   }
   /*! ADMIN NAVBAR */
   .admin_nav {
