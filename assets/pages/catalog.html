@@ -3,17 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--* FAVICON LINK -->
+    <link rel="icon" href="../img/books-three.png" type="image/png" />
     <!--* ICON LINK -->
     <link rel="stylesheet" href="../icons/style.css" />
     <!--* CSS LINKS -->
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/root.css" />
     <link rel="stylesheet" href="../css/head_foot.css" />
+    <link rel="stylesheet" href="../css/joinUs.css" />
     <link rel="stylesheet" href="../css/catalog.css" />
 
     <title>Catalog Page</title>
   </head>
+
   <body>
+    <section class="join_modal">
+      <div class="container">
+        <div class="login">
+          <h2>Join Us</h2>
+          <form action="" id="loginForm">
+            <div class="login__input_group">
+              <label for="fullName" class="login__label">
+                <input
+                  type="text"
+                  id="fullName"
+                  class="login__input"
+                  name="fullName"
+                  placeholder="Full name"
+                  required
+                />
+              </label>
+              <label for="emailInput" class="login__label">
+                <input
+                  type="email"
+                  id="emailInput"
+                  class="login__input"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+              </label>
+            </div>
+            <div class="login__buttons">
+              <button type="submit" class="login__btn btn">Join</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
     <nav class="book_nav">
       <div class="container">
         <div class="book">
@@ -51,11 +89,352 @@
         </div>
       </div>
     </nav>
+
     <main>
       <div class="container">
-        <h1>salam</h1>
+        <div class="container_header">
+          <h3>All Books</h3>
+          <nav>
+            <ul>
+              <li><a href="#">Fantastic</a></li>
+              <li><a href="#">Self-development</a></li>
+              <li><a href="#">Baby</a></li>
+              <li><a href="#">Classic</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="med-related-prod-wrap" id="med-related-prod-wrapper">
+          <span
+            class="sol_button master icon-chevron_left btn-left"
+            aria-label="left-arrow"
+            onclick=""
+          ></span>
+          <div class="med-rel-prod-slider carousel-content">
+            <div class="med-product-card">
+              <div class="new-label">New</div>
+              <div class="related-prod-wrapper">
+                <img src="../img/book_1.png" alt="" class="related-prod-img" />
+              </div>
+              <div class="related-prod-detail">
+                <h4 class="rel-med-name">Order in Chaos</h4>
+                <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                <button type="button">Read more</button>
+              </div>
+            </div>
+            <div class="med-product-card">
+              <div class="related-prod-wrapper">
+                <img src="../img/book_2.png" alt="" class="related-prod-img" />
+              </div>
+              <div class="related-prod-detail">
+                <h4 class="rel-med-name">Order in Chaos</h4>
+                <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                <button type="button">Read more</button>
+              </div>
+            </div>
+            <div class="med-product-card">
+              <div class="related-prod-wrapper">
+                <img src="../img/book_3.png" alt="" class="related-prod-img" />
+              </div>
+              <div class="related-prod-detail">
+                <h4 class="rel-med-name">Order in Chaos</h4>
+                <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                <button type="button">Read more</button>
+              </div>
+            </div>
+            <div class="med-product-card">
+              <div class="related-prod-wrapper">
+                <img src="../img/book_4.png" alt="" class="related-prod-img" />
+              </div>
+              <div class="related-prod-detail">
+                <h4 class="rel-med-name">Order in Chaos</h4>
+                <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                <button type="button">Read more</button>
+              </div>
+            </div>
+            <div class="med-product-card">
+              <div class="related-prod-wrapper">
+                <img src="../img/book_5.png" alt="" class="related-prod-img" />
+              </div>
+              <div class="related-prod-detail">
+                <h4 class="rel-med-name">Order in Chaos</h4>
+                <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                <button type="button">Read more</button>
+              </div>
+            </div>
+            <div class="med-product-card">
+              <div class="related-prod-wrapper">
+                <img src="../img/book_1.png" alt="" class="related-prod-img" />
+              </div>
+              <div class="related-prod-detail">
+                <h4 class="rel-med-name">Order in Chaos</h4>
+                <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                <button type="button">Read more</button>
+              </div>
+            </div>
+            <div class="med-product-card">
+              <div class="related-prod-wrapper">
+                <img src="../img/book_2.png" alt="" class="related-prod-img" />
+              </div>
+              <div class="related-prod-detail">
+                <h4 class="rel-med-name">Order in Chaos</h4>
+                <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                <button type="button">Read more</button>
+              </div>
+            </div>
+          </div>
+          <span
+            aria-label="right-arrow"
+            onclick=""
+            class="sag_button master icon-chevron_right btn-right"
+          ></span>
+        </div>
+
+        <div class="catalog_cards">
+          <div class="catalog_header">
+            <h5>Besteller</h5>
+          </div>
+          <div class="med-related-prod-wrap" id="med-related-prod-wrapper2">
+            <span
+              class="sol_button master icon-chevron_left btn-left"
+              aria-label="left-arrow"
+              onclick=""
+            ></span>
+            <div class="med-rel-prod-slider carousel-content">
+              <div class="med-product-card">
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_1.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+              <div class="med-product-card">
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_2.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+              <div class="med-product-card">
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_3.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+              <div class="med-product-card">
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_4.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+              <div class="med-product-card">
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_5.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+              <div class="med-product-card">
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_1.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+              <div class="med-product-card">
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_2.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+            </div>
+            <span
+              aria-label="right-arrow"
+              onclick=""
+              class="sag_button master icon-chevron_right btn-right"
+            ></span>
+          </div>
+        </div>
+
+        <div class="catalog_cards">
+          <div class="catalog_header">
+            <h5>New releases</h5>
+          </div>
+          <div class="med-related-prod-wrap" id="med-related-prod-wrapper3">
+            <span
+              class="sol_button master icon-chevron_left btn-left"
+              aria-label="left-arrow"
+              onclick=""
+            ></span>
+            <div class="med-rel-prod-slider carousel-content">
+              <div class="med-product-card">
+                <div class="new-label">New</div>
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_1.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+              <div class="med-product-card">
+                <div class="new-label">New</div>
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_2.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+              <div class="med-product-card">
+                <div class="new-label">New</div>
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_3.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+              <div class="med-product-card">
+                <div class="new-label">New</div>
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_4.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+              <div class="med-product-card">
+                <div class="new-label">New</div>
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_5.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+              <div class="med-product-card">
+                <div class="new-label">New</div>
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_1.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+              <div class="med-product-card">
+                <div class="new-label">New</div>
+                <div class="related-prod-wrapper">
+                  <img
+                    src="../img/book_2.png"
+                    alt=""
+                    class="related-prod-img"
+                  />
+                </div>
+                <div class="related-prod-detail">
+                  <h4 class="rel-med-name">Order in Chaos</h4>
+                  <span class="rel-no-of-tab">Konstantin Koptelov</span>
+                  <button type="button">Read more</button>
+                </div>
+              </div>
+            </div>
+            <span
+              aria-label="right-arrow"
+              onclick=""
+              class="sag_button master icon-chevron_right btn-right"
+            ></span>
+          </div>
+        </div>
       </div>
     </main>
+
     <footer class="footer">
       <div class="container">
         <div class="footer__social">
@@ -131,7 +510,7 @@
                 <a href="./catalog.html">catalog</a>
               </li>
               <li class="book__list_item">
-                <a href="./about.html">about</a>
+                <a href="./about.html">about store</a>
               </li>
               <li class="book__list_item">
                 <a href="./contact.html">contact us</a>
@@ -158,6 +537,7 @@
         </div>
       </div>
     </footer>
+    <script src="../js/joinUs.js"></script>
     <script src="../js/catalog.js"></script>
   </body>
 </html>

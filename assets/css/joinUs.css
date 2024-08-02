@@ -1,0 +1,95 @@
+.join_modal {
+  font-family: Montserrat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--join-modal-bg);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.login {
+  background-color: var(--background-color-light);
+  padding: 70px 54px 34px 54px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login h2 {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 53.64px;
+  text-align: center;
+  color: var(--text-color-black);
+  width: 100%;
+}
+.login__input_group {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 20px;
+}
+.login__label {
+  padding: 20px 50px;
+  border: 1px solid var(--form-border-color);
+  width: 450px;
+}
+
+.login__input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+.login__input::placeholder {
+  font-family: Crimson Text;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 24.7px;
+}
+.login__btn {
+  background-color: var(--orange-color);
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 20px;
+  color: var(--text-color-white);
+  font-family: Crimson Text;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24.7px;
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  .book__logo {
+    padding-top: 10px;
+  }
+  .login h2 {
+    font-size: 20px;
+    line-height: 24.38px;
+  }
+  .login__label {
+    width: 100%;
+    padding: 10px;
+  }
+  .login__input::placeholder {
+    font-size: 16px;
+    line-height: 20.8px;
+  }
+  .login__btn {
+    line-height: 23.4px;
+    padding: 10px;
+  }
+}

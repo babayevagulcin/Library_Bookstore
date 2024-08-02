@@ -3,16 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--* FAVICON LINK -->
+    <link rel="icon" href="../img/books-three.png" type="image/png" />
     <!--* ICON LINK -->
     <link rel="stylesheet" href="../icons/style.css" />
     <!--* CSS LINKS -->
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/root.css" />
     <link rel="stylesheet" href="../css/head_foot.css" />
+    <link rel="stylesheet" href="../css/joinUs.css" />
     <link rel="stylesheet" href="../css/about.css" />
     <title>About Page</title>
   </head>
   <body>
+    <section class="join_modal">
+      <div class="container">
+        <div class="login">
+          <h2>Join Us</h2>
+          <form action="" id="loginForm">
+            <div class="login__input_group">
+              <label for="fullName" class="login__label">
+                <input
+                  type="text"
+                  id="fullName"
+                  class="login__input"
+                  name="fullName"
+                  placeholder="Full name"
+                  required
+                />
+              </label>
+              <label for="emailInput" class="login__label">
+                <input
+                  type="email"
+                  id="emailInput"
+                  class="login__input"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+              </label>
+            </div>
+            <div class="login__buttons">
+              <button type="submit" class="login__btn btn">Join</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
     <nav class="book_nav">
       <div class="container">
         <div class="book">
@@ -178,6 +215,7 @@
         </div>
       </div>
     </footer>
+    <script src="../js/joinUs.js"></script>
     <script src="../js/about.js"></script>
   </body>
 </html>

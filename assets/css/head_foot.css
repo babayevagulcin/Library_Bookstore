@@ -270,7 +270,8 @@ body {
   .book__list {
     display: none;
   }
-  .book__join {
+  .book__join_us,
+  .book__profile_icon {
     display: none;
   }
   .book__hamburger {

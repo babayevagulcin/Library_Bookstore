@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--* FAVICON LINK -->
+    <link rel="icon" href="../img/books-three.png" type="image/png" />
     <!--* ICON LINK -->
     <link rel="stylesheet" href="../icons/style.css" />
     <!--* CSS LINKS -->
@@ -28,7 +30,7 @@
             <h4>Admin Panel</h4>
           </div>
         </div>
-        <span class="master icon-hamburger"></span>
+        <span class="master icon-hamburger book__logo_hamburger"></span>
       </div>
     </header>
     <nav class="admin_nav">
@@ -38,6 +40,7 @@
           <h1>library</h1>
           <h4>Admin Panel</h4>
         </div>
+        <span class="master icon-x"></span>
       </div>
       <ul class="nav__list">
         <li class="nav__list_item">
@@ -47,31 +50,31 @@
           </a>
         </li>
         <li class="nav__list_item">
-          <a href="#">
+          <a href="#boooksSection">
             <span class="master icon-books-stack"></span>
             <span>Books</span>
           </a>
         </li>
         <li class="nav__list_item">
-          <a href="#">
+          <a href="#aboutStoreSection">
             <span class="master icon-books-stack"></span>
             <span>about</span>
           </a>
         </li>
         <li class="nav__list_item">
-          <a href="#">
+          <a href="#joinUsSection">
             <span class="master icon-books-stack"></span>
             <span>Join us</span>
           </a>
         </li>
         <li class="nav__list_item">
-          <a href="#">
+          <a href="#contactSection">
             <span class="master icon-books-stack"></span>
             <span>contact</span>
           </a>
         </li>
         <li class="nav__list_item">
-          <a href="#">
+          <a href="#" id="logout">
             <span class="master icon-books-stack"></span>
             <span>logout</span>
           </a>
@@ -80,7 +83,7 @@
     </nav>
     <main class="admin_panel">
       <div class="container">
-        <section class="add_book">
+        <section id="addBook" class="add_book">
           <p class="add_book__title">Add book</p>
           <form action="" class="add_book__form">
             <p class="add_book__form_title">Search book</p>
@@ -107,7 +110,7 @@
           </form>
         </section>
 
-        <section class="book_form">
+        <section id="bookFormSection" class="book_form">
           <p class="book_form__title">Book form</p>
           <form action="" id="bookForm">
             <label for="bookName" class="book_form__label">
@@ -181,7 +184,7 @@
           </form>
         </section>
 
-        <section class="about_store">
+        <section id="aboutStoreSection" class="about_store">
           <p class="about_store__title">About store</p>
           <form action="" id="aboutForm">
             <label for="" class="book_form__label">
@@ -216,7 +219,7 @@
           </form>
         </section>
 
-        <section class="join_us">
+        <section id="joinUsSection" class="join_us">
           <p class="admin_table__title">join us</p>
           <div class="table_wrapper">
             <table class="join_us__table">
@@ -253,7 +256,7 @@
           </div>
         </section>
 
-        <section class="books">
+        <section id="boooksSection" class="books">
           <p class="admin_table__title">Books</p>
           <div class="table_wrapper">
             <table>
@@ -286,7 +289,7 @@
           </div>
         </section>
 
-        <section class="contact_us">
+        <section id="contactSection" class="contact_us">
           <p class="admin_table__title">Contact Us</p>
           <div class="table_wrapper">
             <table>
