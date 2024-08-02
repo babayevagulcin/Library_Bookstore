@@ -1,16 +1,16 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--background-color-light);
-    margin: 0;
-    padding: 0;
+        
 }
 
 .search-section {
     width: 100%;
     display: flex;
-    /* gap: 50px; */
+    gap: 50px;
     padding-top: 140px;
     justify-content: center;
+   
 }
 
 .search-container {
@@ -21,6 +21,7 @@ body {
     margin-top: 80px;
     text-align: center;
     margin-left: 80px;
+    
 }
 
 .search-container h1 {
@@ -32,6 +33,7 @@ body {
     
 }
 
+
 .search-container input {
     font-family: 'Crimson', sans-serif;
     font-weight: 400px;
@@ -39,7 +41,7 @@ body {
     line-height: 30px;
     width: 433px;
     height: 70px;
-    top: 293px;
+    top: 290px;
     left: 213px;
     border: 1px solid #e6e7e9;
     padding: 10px;
@@ -85,13 +87,15 @@ body {
 }
 
 .book-card {
-    min-width: 801px;
+    min-width: 800px;
     box-sizing: border-box;
     padding: 20px;
-    background-color: white;
+    
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    margin-top: 30px;
+    background-color: white;
 }
 
 .book-cover {
@@ -100,16 +104,16 @@ body {
     margin-right: 20px;
 }
 
-/* .book-info {
-    max-width: calc(100% - 170px);
-} */
+
 
 .book-info h2 {    
   color: var(--text-color-brown);
     width: 188px;
     height: 47px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 47px;
 }
 
 .book-info h3{
@@ -118,9 +122,12 @@ body {
   font-size: 18px;
   line-height: 35px;
   color: var(--text-color-brown);
+  width: 195px;
+  height: 41px;
 }
 
 .book-info p {
+    font-family: 'Montserrat', sans-serif;
     color: var(--text-color-brown);
     line-height: 35px;
     font-weight: 400;
@@ -141,7 +148,7 @@ body {
 }
 
 .prev-btn {
-  left: 0;
+  left:0;
 }
 
 .next-btn {
