@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="../css/head_foot.css" />
     <link rel="stylesheet" href="../css/joinUs.css" />
     <link rel="stylesheet" href="../css/search.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 
     <title>Search Page</title>
   </head>
@@ -90,36 +93,91 @@
       </div>
     </nav>
 
-    <div class="search-section">
-      <div class="search-container">
-          <h1>Search</h1>
-          <input type="text" placeholder="Search for books" />
-          <button class="search-button">Search</button>
-      </div>
-      <div class="slider-container">
-          <div class="book-slider">
-              <div class="book-card">
-                  <img src="../img/bigbook.png" alt="Book Cover 1" class="book-cover"/>
-                  <div class="book-info">
-                      <h2>Order in Chaos</h2>
-                      <h3>Konstantin Koptelov</h3>
-                      <p> We work without holidays and weekends! Residents of Kiev can receive an order on the day of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are delivered  free of charge *. You can see the available methods, exact terms and cost of delivery during checkout in the order basket, after selecting the delivery city</p>
-                  </div>
-              </div>
-              <div class="book-card">
-                  <img src="../img/book_3.png" alt="Book Cover 2" class="book-cover"/>
-                  <div class="book-info">
-                      <h2>Order in Chaos</h2>
-                      <h3>Konstantin Koptelov</h3>
-                      <p>We work without holidays and weekends! Residents of Kiev can receive an order on the day of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are delivered  free of charge *. You can see the available methods, exact terms and cost of delivery during checkout in the order basket, after selecting the delivery city</p>
-                  </div>
-              </div>
-              
+    <section class="search-section">
+      <div class="container">
+        <div class="search-content">
+          <div class="search-container">
+            <h1>Search</h1>
+            <input type="text" placeholder="Search for books" />
+            <button class="search-button btn">Search</button>
           </div>
-          <button class="prev-btn">❮</button>
-          <button class="next-btn">❯</button>
+          <div class="slider-container">
+            <button class="prev">
+              <span class="master icon-chevron_left"></span>
+            </button>
+
+            <div id="bookSlider" class="book-slider">
+              <div class="book-card">
+                <img
+                  src="../img/bigbook.png"
+                  alt="Book Cover 1"
+                  class="book-cover"
+                />
+                <div class="book-info">
+                  <h2>Order in Chaos</h2>
+                  <h3>Konstantin Koptelov</h3>
+                  <p>
+                    We work without holidays and weekends! Residents of Kiev can
+                    receive an order on the day of its registration. Customers
+                    from other cities of Ukraine can receive an order within 1-5
+                    days, depending on the location of the settlement and the
+                    selected delivery method. Orders over UAH 1000 are delivered
+                    free of charge *. You can see the available methods, exact
+                    terms and cost of delivery during checkout in the order
+                    basket, after selecting the delivery city
+                  </p>
+                </div>
+              </div>
+              <div class="book-card">
+                <img
+                  src="../img/bigbook.png"
+                  alt="Book Cover 1"
+                  class="book-cover"
+                />
+                <div class="book-info">
+                  <h2>Order in Chaos</h2>
+                  <h3>Konstantin Koptelov</h3>
+                  <p>
+                    We work without holidays and weekends! Residents of Kiev can
+                    receive an order on the day of its registration. Customers
+                    from other cities of Ukraine can receive an order within 1-5
+                    days, depending on the location of the settlement and the
+                    selected delivery method. Orders over UAH 1000 are delivered
+                    free of charge *. You can see the available methods, exact
+                    terms and cost of delivery during checkout in the order
+                    basket, after selecting the delivery city
+                  </p>
+                </div>
+              </div>
+              <div class="book-card">
+                <img
+                  src="../img/book_3.png"
+                  alt="Book Cover 2"
+                  class="book-cover"
+                />
+                <div class="book-info">
+                  <h2>Order in Chaos</h2>
+                  <h3>Konstantin Koptelov</h3>
+                  <p>
+                    We work without holidays and weekends! Residents of Kiev can
+                    receive an order on the day of its registration. Customers
+                    from other cities of Ukraine can receive an order within 1-5
+                    days, depending on the location of the settlement and the
+                    selected delivery method. Orders over UAH 1000 are delivered
+                    free of charge *. You can see the available methods, exact
+                    terms and cost of delivery during checkout in the order
+                    basket, after selecting the delivery city
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button class="next">
+              <span class="master icon-chevron_right"></span>
+            </button>
+          </div>
+        </div>
       </div>
-  </div>
+    </section>
 
     <footer class="footer">
       <div class="container">
@@ -127,7 +185,8 @@
           <h3>Follow us on social media</h3>
           <div class="footer__social_icons">
             <a href="https://www.facebook.com/"
-              ><span class="master icon-facebook"></span></a>
+              ><span class="master icon-facebook"></span
+            ></a>
             <a href="https://x.com/i/flow/login">
               <span class="master icon-twitter"></span>
             </a>
