@@ -51,3 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+if (localStorage.getItem("isAdmin") !== "true") {
+  window.location.href = "adminLogin.html";
+}
