@@ -1,5 +1,10 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-// TODO: Add SDKs for Firebase products that you want to use
+import {
+  getDatabase,
+  ref,
+  set,
+  get,
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDAPlbFpE_A4YAaKRXPKyR6AKmu5B8ef2o",
@@ -11,3 +16,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+export { database, ref, get };

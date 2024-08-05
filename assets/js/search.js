@@ -1,37 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById("bookSlider");
-  const prevButton = document.querySelector(".prev");
-  const nextButton = document.querySelector(".next");
-  const slideWidth = slider.querySelector(".book-card").offsetWidth;
+  const nextBtn = document.querySelector(".next");
+  const prevBtn = document.querySelector(".prev");
   let currentIndex = 0;
-  const totalSlides = slider.children.length;
 
-  function updateSlider() {
-    const offset = -currentIndex * slideWidth;
-    slider.style.transform = `translateX(${offset}px)`;
+  function updateSliderPosition() {
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
-  prevButton.addEventListener("click", function () {
+  function nextSlide() {
+    if (currentIndex < slider.children.length - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    updateSliderPosition();
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+
+  prevBtn.addEventListener("click", () => {
     if (currentIndex > 0) {
       currentIndex--;
-      updateSlider();
+    } else {
+      currentIndex = slider.children.length - 1;
     }
+    updateSliderPosition();
   });
 
-  nextButton.addEventListener("click", function () {
-    if (currentIndex < totalSlides - 1) {
-      currentIndex++;
-      updateSlider();
-    }
-  });
-
-  window.addEventListener("resize", function () {
-    slider.style.transition = "none"; // Disable transition during resize
-    setTimeout(() => {
-      slider.style.transition = "transform 0.5s ease-in-out"; // Re-enable transition after resize
-      updateSlider();
-    }, 100);
-  });
-
-  updateSlider();
+  setInterval(nextSlide, 3000);
 });
