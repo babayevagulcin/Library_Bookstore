@@ -137,6 +137,43 @@ body {
     background-color: var(--background-color-light);
     box-shadow: none;
   }
+
+  .book-info h2 {
+    font-family: "Montserrat", sans-serif;
+    color: var(--text-color-brown);
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 49.05px;  
+  justify-content: center;
+  text-align: center;
+  }
+  
+  .book-info h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 23.54px;
+    width: 290px;
+    color: var(--text-color-brown);
+    /* padding-bottom: 8px; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .book-info p {
+    font-family: "Montserrat", sans-serif;
+    color: var(--text-color-brown);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 23.54px;
+    width: 290px;
+    align-items: center;     
+  justify-content: center;
+  text-align: center;
+  }
+
+
 }
 @media only screen and (max-width: 767px) {
   .book-card {
