@@ -20,6 +20,7 @@
   --admin-table-first-bg: #fff;
   --admin-table-second-bg: #f9fafc;
   --res-admin-bg: #241400b2;
-  --join-modal-bg: #00000080;
+  --join-modal-bg: rgba(36, 20, 0, 0.9);
   --search-slider-icon: #720418;
+  --mobile-menu-bg: rgba(36, 20, 0, 0.9);
 }

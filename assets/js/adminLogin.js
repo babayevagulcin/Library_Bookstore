@@ -7,7 +7,6 @@ async function login(username, password) {
 
     if (snapshot.exists()) {
       const adminData = snapshot.val();
-
       if (
         adminData.adminName === username &&
         adminData.adminPassword === password
