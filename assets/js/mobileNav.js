@@ -5,11 +5,13 @@ const mobileMenu = document.querySelector("#mobileMenu");
 hamburger.addEventListener("click", function () {
   mobileMenu.classList.add("open");
 });
+
 xIcon.addEventListener("click", function () {
   mobileMenu.classList.remove("open");
 });
+
 window.addEventListener("resize", function () {
-  if (window.innerWidth > 767) {
+  if (window.innerWidth >= 768) {
     mobileMenu.classList.remove("open");
   }
 });
