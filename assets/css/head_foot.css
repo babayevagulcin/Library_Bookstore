@@ -351,3 +351,9 @@ body {
     display: block;
   }
 }
+
+@media (min-width: 767px) {
+  .mobile_menu {
+    display: none !important;
+  }
+}
