@@ -28,5 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSliderPosition();
   });
 
-  setInterval(nextSlide, 3000);
+  // setInterval(nextSlide, 3000);
+  
 });
