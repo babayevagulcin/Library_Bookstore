@@ -8,3 +8,8 @@ hamburger.addEventListener("click", function () {
 xIcon.addEventListener("click", function () {
   mobileMenu.classList.remove("open");
 });
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 767) {
+    mobileMenu.classList.remove("open");
+  }
+});
