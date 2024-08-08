@@ -1,4 +1,8 @@
+if (localStorage.getItem("isAdmin") !== "true") {
+  window.location.href = "adminLogin.html";
+}
 document.addEventListener("DOMContentLoaded", function () {
+  //* MOBILE MENU
   const hamburgerMenu = document.querySelector(".book__logo_hamburger");
   const responsiveMenu = document.querySelector(".res_header");
   const adminNavbar = document.querySelector(".admin_nav");
@@ -52,11 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-if (localStorage.getItem("isAdmin") !== "true") {
-  window.location.href = "adminLogin.html";
-}
-
-//! FIREBASE DATA// adminPanel.js
+//! FIREBASE DATA
 
 import { db } from "./firebaseConfig.js";
 import {
@@ -125,6 +125,7 @@ async function fetchBooks(query) {
   }
 }
 
+//! SEARCH BOOKS
 function displaySearchResults(books) {
   const searchResultsDiv = document.getElementById("searchResults");
 
@@ -181,6 +182,6 @@ document.getElementById("searchInput").addEventListener("input", async () => {
     displaySearchResults(books);
   } else {
     document.getElementById("searchResults").style.display = "none";
-    document.getElementById("searchResults").classList.remove("active"); // Arka plan rengini kaldır
+    document.getElementById("searchResults").classList.remove("active");
   }
 });

@@ -1,5 +1,3 @@
-let API_URL = `https://www.googleapis.com/books/v1/volumes?q=$%7Binput.value%7D`;
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 import {
   getDatabase,
