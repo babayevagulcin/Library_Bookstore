@@ -132,38 +132,23 @@ body {
     text-align: center;
     width: 100%;
   }
+
+  .slider-container {
+    max-width: 100%;
+  }
+  .book-slider {
+    display: flex;
+    max-width: 100%;
+  }
   .book-card {
+    padding: 40px 50px;
     background-color: var(--background-color-light);
     box-shadow: none;
   }
-
-  .book-info h2 {
-    font-family: "Montserrat", sans-serif;
-    color: var(--text-color-brown);
-    font-size: 25px;
-    font-weight: 900;
-    line-height: 49.05px;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .book-info h3 {
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 23.54px;
-    width: 290px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
   .book-info p {
-    font-size: 12px;
-    line-height: 23.54px;
-    width: 290px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    width: 100%;
   }
+
   @media only screen and (max-width: 767px) {
     .book-card {
       flex-direction: column;
