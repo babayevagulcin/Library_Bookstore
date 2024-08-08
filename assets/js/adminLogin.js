@@ -15,13 +15,14 @@ async function login(username, password) {
         adminData.adminName === username &&
         adminData.adminPassword === password
       ) {
-        localStorage.setItem("isAdmin", "true");
+        sessionStorage.setItem("isAdmin", "true");
         window.location.href = "adminPanel.html";
-        return;
+      } else {
+        alert("Invalid username or password");
       }
+    } else {
+      alert("Admin data not found");
     }
-
-    alert("Invalid username or password");
   } catch (error) {
     console.error("Login error:", error);
     alert("An error occurred. Please try again.");
