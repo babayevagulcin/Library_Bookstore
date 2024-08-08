@@ -220,10 +220,33 @@ body {
   display: none;
   flex-direction: column;
   row-gap: 10px;
-  background-color: var(--admin-search-bg-color);
   width: 395px;
   border-radius: 34px;
   padding: 20px 36px;
+  cursor: pointer;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.add_book__search::-webkit-scrollbar {
+  width: 5px;
+}
+
+.add_book__search::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.add_book__search::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.add_book__search::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.add_book__search.active {
+  background-color: var(--admin-search-bg-color);
 }
 
 .add_book__search p {
@@ -236,6 +259,18 @@ body {
   line-height: 25.29px;
   color: var(--admin-search-color);
 }
+/*? TRASH ICON */
+.icon-trash {
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-trash:hover {
+  color: #ff0000;
+  transform: scale(1.2);
+  animation: pulse 0.6s infinite;
+}
+
 /*! BOOK FORM */
 .book_form {
   padding-top: 80px;
@@ -251,7 +286,6 @@ body {
 #aboutForm {
   padding: 16px 30px 30px 30px;
   border-radius: 20px;
-  background-color: var(--text-color-white);
   display: flex;
   flex-direction: column;
   row-gap: 24px;
@@ -395,6 +429,22 @@ table tr:nth-child(even) {
 .contact_us {
   padding-bottom: 200px;
 }
+
+/*? TRASH ICON ANIMATION */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*? RESPOSIVE */
 @media only screen and (max-width: 991px) {
   /*! ADMIN NAVBAR */
   .admin_nav {
@@ -446,6 +496,10 @@ table tr:nth-child(even) {
     width: 100%;
   }
   /*! MAIN SECTION */
+
+  .add_book__search {
+    width: 100%;
+  }
   .add_book,
   .book_form__title,
   .admin_table__title {
