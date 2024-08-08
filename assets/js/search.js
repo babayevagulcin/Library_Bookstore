@@ -1,33 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById("bookSlider");
-  const nextBtn = document.querySelector(".next");
-  const prevBtn = document.querySelector(".prev");
+  const prevButton = document.querySelector(".prev");
+  const nextButton = document.querySelector(".next");
   let currentIndex = 0;
+  const totalSlides = slider.children.length;
 
-  function updateSliderPosition() {
+  function updateSlider() {
     slider.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
-  function nextSlide() {
-    if (currentIndex < slider.children.length - 1) {
+  prevButton.addEventListener("click", function () {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  });
+
+  nextButton.addEventListener("click", function () {
+    if (currentIndex < totalSlides - 1) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
+
+  function autoSlide() {
+    if (currentIndex < totalSlides - 1) {
       currentIndex++;
     } else {
       currentIndex = 0;
     }
-    updateSliderPosition();
+    updateSlider();
   }
-
-  nextBtn.addEventListener("click", nextSlide);
-
-  prevBtn.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-    } else {
-      currentIndex = slider.children.length - 1;
-    }
-    updateSliderPosition();
-  });
-
-  // setInterval(nextSlide, 3000);
-  
+  setInterval(autoSlide, 3000);
 });
