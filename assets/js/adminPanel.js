@@ -1,6 +1,10 @@
-if (localStorage.getItem("isAdmin") !== "true") {
-  window.location.href = "adminLogin.html";
-}
+window.addEventListener("load", function () {
+  const isAdmin = sessionStorage.getItem("isAdmin");
+  if (isAdmin !== "true") {
+    window.location.href = "adminLogin.html";
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   //* MOBILE MENU
   const hamburgerMenu = document.querySelector(".book__logo_hamburger");
