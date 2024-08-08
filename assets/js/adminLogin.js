@@ -1,8 +1,12 @@
-import { database, ref, get } from "./firebaseConfig.js";
+import { db } from "./firebaseConfig.js";
+import {
+  ref,
+  get,
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 
 async function login(username, password) {
   try {
-    const adminRef = ref(database, "admin");
+    const adminRef = ref(db, "admin");
     const snapshot = await get(adminRef);
 
     if (snapshot.exists()) {
@@ -17,10 +21,10 @@ async function login(username, password) {
       }
     }
 
-    alert("Geçersiz kullanıcı adı veya şifre");
+    alert("Invalid username or password");
   } catch (error) {
-    console.error("Giriş hatası:", error);
-    alert("Bir hata oluştu. Lütfen tekrar deneyin.");
+    console.error("Login error:", error);
+    alert("An error occurred. Please try again.");
   }
 }
 
