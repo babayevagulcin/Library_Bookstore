@@ -207,76 +207,85 @@ document.getElementById("searchInput").addEventListener("input", async () => {
   }
 });
 
-//! ADD BOOK FORM
+//! KİTAB elave etmek
 document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("bookForm")
     .addEventListener("submit", async function (event) {
       event.preventDefault();
 
-      const bookName = document.getElementById("bookName").value.trim();
-      const authorName = document.getElementById("authorName").value.trim();
-      const imgUrl = document.getElementById("imgUrl").value.trim();
-      const isNew = document.getElementById("newBook").checked;
-      const description = document.getElementById("description").value.trim();
-      const bookType = document.getElementById("bookType").value.trim();
-
-      if (!bookName || !authorName || !imgUrl || !description || !bookType) {
+      const newBook = getFormData();
+      if (!newBook) {
         alert("Please fill in all fields.");
         return;
       }
-
-      const newBook = {
-        title: bookName || "Unknown Title",
-        authors: [authorName || "Unknown Author"],
-        imageUrl: imgUrl,
-        new: isNew || false,
-        description: description || "No description available",
-        type: bookType || "Unknown Type",
-      };
 
       try {
         const dbRef = ref(db, "books");
         const booksSnapshot = await get(dbRef);
 
-        if (booksSnapshot.exists()) {
-          const books = booksSnapshot.val();
-          let exists = false;
-
-          for (const key in books) {
-            const book = books[key];
-
-            if (
-              book.title === bookName &&
-              book.authors.includes(authorName) &&
-              book.imageUrl === imgUrl &&
-              book.description === description &&
-              book.type === bookType &&
-              book.new === isNew
-            ) {
-              exists = true;
-              break;
-            }
-          }
-
-          if (exists) {
-            alert("This book already exists.");
-            return;
-          }
+        if (
+          booksSnapshot.exists() &&
+          bookExists(booksSnapshot.val(), newBook)
+        ) {
+          alert("This book already exists.");
+          return;
         }
 
         const newBookRef = ref(db, `books/${push(dbRef).key}`);
         await set(newBookRef, newBook);
 
-        console.log("Kitab Firebase-ə əlavə edildi");
+        console.log("Book added to Firebase");
 
         addBookToCatalog(newBook, newBookRef.key);
+        resetForm();
       } catch (error) {
         console.error("Error adding book to Firebase:", error);
       }
     });
 });
 
+//! Formdan Datalari cekmek
+function getFormData() {
+  const bookName = document.getElementById("bookName").value.trim();
+  const authorName = document.getElementById("authorName").value.trim();
+  const imgUrl = document.getElementById("imgUrl").value.trim();
+  const isNew = document.getElementById("newBook").checked;
+  const description = document.getElementById("description").value.trim();
+  const bookType = document.getElementById("bookType").value.trim();
+
+  if (!bookName || !authorName || !imgUrl || !description || !bookType) {
+    return null;
+  }
+
+  return {
+    title: bookName || "Unknown Title",
+    authors: [authorName || "Unknown Author"],
+    imageUrl: imgUrl,
+    new: isNew || false,
+    description: description || "No description available",
+    type: bookType || "Unknown Type",
+  };
+}
+
+//! FORMU TEMIZLE
+function resetForm() {
+  document.getElementById("bookForm").reset();
+  document.getElementById("bookType").value = "";
+}
+//! Var olan kitabi yoxlamaq
+function bookExists(books, newBook) {
+  return Object.values(books).some(
+    (book) =>
+      book.title === newBook.title &&
+      book.authors.includes(newBook.authors[0]) &&
+      book.imageUrl === newBook.imageUrl &&
+      book.description === newBook.description &&
+      book.type === newBook.type &&
+      book.new === newBook.new
+  );
+}
+//! Kitablari kataloqa add et
 function addBookToCatalog(book, bookId) {
   const catalog = document.getElementById("books-container");
 
@@ -290,7 +299,7 @@ function addBookToCatalog(book, bookId) {
   bookCard.setAttribute("data-id", bookId);
 
   bookCard.innerHTML = `
-    <div class="new-label">${book.new ? "New" : ""}</div>
+     ${book.new ? ' <div class="new-label">New</div>' : ""}
     <div class="related-prod-wrapper">
       <img src="${book.imageUrl}" alt="${
     book.title
