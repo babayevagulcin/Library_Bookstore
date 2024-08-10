@@ -17,5 +17,43 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+async function fetchAndStoreBooks(query) {
+  try {
+    const response = await fetch(
+      `https://www.googleapis.com/books/v1/volumes?q=${query}`
+    );
+    const data = await response.json();
 
+    if (data.items && Array.isArray(data.items)) {
+      data.items.forEach((book) => {
+        const bookId = book.id;
+        const bookRef = ref(db, `books/${bookId}`);
+
+        const title = book.volumeInfo.title || "";
+        const authors = Array.isArray(book.volumeInfo.authors)
+          ? book.volumeInfo.authors
+          : [];
+        const description = book.volumeInfo.description || "No Description";
+        const imageUrl = book.volumeInfo.imageLinks
+          ? book.volumeInfo.imageLinks.thumbnail
+          : "";
+
+        set(bookRef, {
+          title: title,
+          authors: authors,
+          description: description,
+          imageUrl: imageUrl,
+        }).catch((error) => {
+          console.error(`Error writing book ${bookId}: `, error);
+        });
+      });
+    } else {
+      console.log("No books found or data.items is not an array.");
+    }
+  } catch (error) {
+    console.error("Error fetching or writing data: ", error);
+  }
+}
+
+fetchAndStoreBooks();
 export { db };

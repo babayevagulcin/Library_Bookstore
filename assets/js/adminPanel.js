@@ -67,6 +67,7 @@ import {
   ref,
   set,
   get,
+  push,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 
 const API_URL = "https://www.googleapis.com/books/v1/volumes?q=";
@@ -108,7 +109,7 @@ async function getBooksFromFirebase() {
     console.error("Error retrieving books from Firebase:", error);
   }
 }
-
+//! SEARCH BOOKS
 document.getElementById("searchButton").addEventListener("click", () => {
   const query = document.getElementById("searchInput").value;
   fetchAndSaveBooks(query);
@@ -129,7 +130,6 @@ async function fetchBooks(query) {
   }
 }
 
-//! SEARCH BOOKS
 function displaySearchResults(books) {
   const searchResultsDiv = document.getElementById("searchResults");
 
@@ -146,9 +146,9 @@ function displaySearchResults(books) {
       const bookElement = document.createElement("p");
 
       bookElement.innerHTML = `
-        <span class="master icon-clock"></span>
-        <span>${bookTitle} by ${bookAuthor}</span>
-      `;
+          <span class="master icon-clock"></span>
+          <span>${bookTitle} by ${bookAuthor}</span>
+        `;
 
       bookElement.addEventListener("click", () => {
         fillBookForm(book);
@@ -165,17 +165,34 @@ function displaySearchResults(books) {
 function fillBookForm(book) {
   const volumeInfo = book.volumeInfo;
 
-  document.getElementById("bookName").value = volumeInfo.title || "";
+  document.getElementById("bookName").value =
+    volumeInfo.title || "Unknown Title";
   document.getElementById("authorName").value = volumeInfo.authors
     ? volumeInfo.authors.join(", ")
     : "Unknown Author";
   document.getElementById("imgUrl").value = volumeInfo.imageLinks
     ? volumeInfo.imageLinks.thumbnail
-    : "";
-  document.getElementById("description").value = volumeInfo.description || "";
+    : "No Image Available";
+  document.getElementById("description").value =
+    volumeInfo.description || "No description available";
 
-  document.getElementById("bookType").value = "fantastic";
+  const categories = volumeInfo.categories || [];
+  const bookTypeSelect = document.getElementById("bookType");
+  bookTypeSelect.innerHTML = "";
 
+  categories.forEach((category) => {
+    const option = document.createElement("option");
+    option.value = category.toLowerCase().replace(/\s+/g, "-");
+    option.textContent = category;
+    bookTypeSelect.appendChild(option);
+  });
+
+  if (categories.length === 0) {
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "unknown";
+    defaultOption.textContent = "Unknown";
+    bookTypeSelect.appendChild(defaultOption);
+  }
   document.getElementById("newBook").checked = false;
 }
 
@@ -189,3 +206,102 @@ document.getElementById("searchInput").addEventListener("input", async () => {
     document.getElementById("searchResults").classList.remove("active");
   }
 });
+
+//! ADD BOOK FORM
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .getElementById("bookForm")
+    .addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const bookName = document.getElementById("bookName").value.trim();
+      const authorName = document.getElementById("authorName").value.trim();
+      const imgUrl = document.getElementById("imgUrl").value.trim();
+      const isNew = document.getElementById("newBook").checked;
+      const description = document.getElementById("description").value.trim();
+      const bookType = document.getElementById("bookType").value.trim();
+
+      if (!bookName || !authorName || !imgUrl || !description || !bookType) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      const newBook = {
+        title: bookName || "Unknown Title",
+        authors: [authorName || "Unknown Author"],
+        imageUrl: imgUrl,
+        new: isNew || false,
+        description: description || "No description available",
+        type: bookType || "Unknown Type",
+      };
+
+      try {
+        const dbRef = ref(db, "books");
+        const booksSnapshot = await get(dbRef);
+
+        if (booksSnapshot.exists()) {
+          const books = booksSnapshot.val();
+          let exists = false;
+
+          for (const key in books) {
+            const book = books[key];
+
+            if (
+              book.title === bookName &&
+              book.authors.includes(authorName) &&
+              book.imageUrl === imgUrl &&
+              book.description === description &&
+              book.type === bookType &&
+              book.new === isNew
+            ) {
+              exists = true;
+              break;
+            }
+          }
+
+          if (exists) {
+            alert("This book already exists.");
+            return;
+          }
+        }
+
+        const newBookRef = ref(db, `books/${push(dbRef).key}`);
+        await set(newBookRef, newBook);
+
+        console.log("Kitab Firebase-ə əlavə edildi");
+
+        addBookToCatalog(newBook, newBookRef.key);
+      } catch (error) {
+        console.error("Error adding book to Firebase:", error);
+      }
+    });
+});
+
+function addBookToCatalog(book, bookId) {
+  const catalog = document.getElementById("books-container");
+
+  if (!catalog) {
+    console.error("Catalog element not found");
+    return;
+  }
+
+  const bookCard = document.createElement("div");
+  bookCard.className = "med-product-card";
+  bookCard.setAttribute("data-id", bookId);
+
+  bookCard.innerHTML = `
+    <div class="new-label">${book.new ? "New" : ""}</div>
+    <div class="related-prod-wrapper">
+      <img src="${book.imageUrl}" alt="${
+    book.title
+  }" class="related-prod-img" />
+    </div>
+    <div class="related-prod-detail">
+      <h4 class="rel-med-name">${book.title}</h4>
+      <span class="rel-no-of-tab">${book.authors.join(", ")}</span>
+      <button type="button">Read more</button>
+    </div>
+  `;
+
+  catalog.appendChild(bookCard);
+}

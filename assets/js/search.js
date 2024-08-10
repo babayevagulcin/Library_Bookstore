@@ -31,5 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     updateSlider();
   }
-  setInterval(autoSlide, 3000);
+  if (window.innerWidth < 767) {
+    setInterval(autoSlide, 3000);
+  }
 });
