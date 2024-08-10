@@ -55,5 +55,5 @@ async function fetchAndStoreBooks(query) {
   }
 }
 
-fetchAndStoreBooks();
+fetchAndStoreBooks("javascript");
 export { db };

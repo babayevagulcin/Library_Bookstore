@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     return `
       <div class="med-product-card">
+        ${book.new ? ' <div class="new-label">New</div>' : ""}
         <div class="related-prod-wrapper">
           <img src="${book.imageUrl}" alt="${title}" class="related-prod-img" />
         </div>
@@ -42,11 +43,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function addBookToCatalog(book) {
     const bookCardHTML = createBookCard(book);
-    booksContainer.innerHTML += bookCardHTML;
+    booksContainer.insertAdjacentHTML("afterbegin", bookCardHTML);
   }
 
   async function loadBooks() {
     const booksRef = ref(db, "books/");
+    try {
+      const snapshot = await get(booksRef);
+      if (snapshot.exists()) {
+        snapshot.forEach((childSnapshot) => {
+          const book = childSnapshot.val();
+          addBookToCatalog(book);
+        });
+      }
+    } catch (error) {
+      console.error("Error loading books:", error);
+    }
+
     onChildAdded(booksRef, (snapshot) => {
       const book = snapshot.val();
       addBookToCatalog(book);
