@@ -83,8 +83,11 @@ async function fetchAndSaveBooks(query) {
 
     if (books) {
       for (const book of books) {
-        const bookRef = ref(db, "books/" + book.id);
-        await set(bookRef, book);
+        const bookRef = ref(db, `books/${book.id}`);
+        const snapshot = await get(bookRef);
+        if (!snapshot.exists()) {
+          await set(bookRef, book);
+        }
       }
       console.log("Books saved to Firebase");
     } else {
@@ -172,7 +175,7 @@ function fillBookForm(book) {
     : "Unknown Author";
   document.getElementById("imgUrl").value = volumeInfo.imageLinks
     ? volumeInfo.imageLinks.thumbnail
-    : "No Image Available";
+    : "";
   document.getElementById("description").value =
     volumeInfo.description || "No description available";
 

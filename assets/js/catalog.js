@@ -3,6 +3,8 @@ import {
   ref,
   get,
   onChildAdded,
+  push,
+  set,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -25,12 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
       : [book.authors || "Unknown Author"];
     const authorsString = authorsArray.join(", ");
     const author = truncateText(authorsString, 15);
+    const displayImageUrl = book.imageUrl ? book.imageUrl : "../img/book_1.png";
 
     return `
       <div class="med-product-card">
         ${book.new ? ' <div class="new-label">New</div>' : ""}
         <div class="related-prod-wrapper">
-          <img src="${book.imageUrl}" alt="${title}" class="related-prod-img" />
+          <img src="${displayImageUrl}" alt="${title}" class="related-prod-img" />
         </div>
         <div class="related-prod-detail">
           <h4 class="rel-med-name">${title}</h4>
