@@ -73,7 +73,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 40px 30px;
+  padding: 40px 50px;
   min-width: 100%;
   background-color: var(--text-color-white);
 }
@@ -141,7 +141,6 @@ body {
     max-width: 100%;
   }
   .book-card {
-    padding: 40px 50px;
     background-color: var(--background-color-light);
     box-shadow: none;
   }

@@ -1,3 +1,60 @@
+import { db } from "./firebaseConfig.js";
+import {
+  ref,
+  get,
+  onChildAdded,
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+
+document.addEventListener("DOMContentLoaded", function () {
+  const booksContainer = document.getElementById("books-container");
+
+  function truncateText(text, maxLength) {
+    if (!text) {
+      return "";
+    }
+    if (text.length > maxLength) {
+      return text.slice(0, maxLength) + "...";
+    }
+    return text;
+  }
+
+  function createBookCard(book) {
+    const title = truncateText(book.title || book.name, 15);
+    const authorsArray = Array.isArray(book.authors)
+      ? book.authors
+      : [book.authors || "Unknown Author"];
+    const authorsString = authorsArray.join(", ");
+    const author = truncateText(authorsString, 15);
+
+    return `
+      <div class="med-product-card">
+        <div class="related-prod-wrapper">
+          <img src="${book.imageUrl}" alt="${title}" class="related-prod-img" />
+        </div>
+        <div class="related-prod-detail">
+          <h4 class="rel-med-name">${title}</h4>
+          <span class="rel-no-of-tab">${author}</span>
+          <button type="button">Read more</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function addBookToCatalog(book) {
+    const bookCardHTML = createBookCard(book);
+    booksContainer.innerHTML += bookCardHTML;
+  }
+
+  async function loadBooks() {
+    const booksRef = ref(db, "books/");
+    onChildAdded(booksRef, (snapshot) => {
+      const book = snapshot.val();
+      addBookToCatalog(book);
+    });
+  }
+
+  loadBooks();
+});
 const bindCarouselEvents = (containerId) => {
   const wrapper = document.getElementById(containerId);
   const btn_left = wrapper.getElementsByClassName("btn-left")[0];
