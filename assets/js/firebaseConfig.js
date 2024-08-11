@@ -44,6 +44,7 @@ async function fetchAndStoreBooks(query) {
           authors: authors,
           description: description,
           imageUrl: imageUrl,
+          timestamp: Date.now(),
         }).catch((error) => {
           console.error(`Error writing book ${bookId}: `, error);
         });
@@ -56,5 +57,5 @@ async function fetchAndStoreBooks(query) {
   }
 }
 
-fetchAndStoreBooks("javascript");
+fetchAndStoreBooks();
 export { db };

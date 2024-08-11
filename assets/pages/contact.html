@@ -117,30 +117,43 @@
               type="text"
               name="fullname"
               class="contact_input"
+              id="contactFullName"
               placeholder="Full Name"
+              required
             />
             <input
               type="text"
               name="email"
+              id="contactEmail"
               class="contact_input"
               placeholder="Email"
+              required
             />
           </div>
           <div class="form_group">
             <input
               type="text"
               name="address"
+              id="contactAdress"
               class="contact_input"
               placeholder="Address"
+              required
             />
             <input
               type="tel"
               name="phone"
+              id="contactPhone"
               class="contact_input"
               placeholder="Phone"
+              required
             />
           </div>
-          <textarea class="textarea" name="note" placeholder="Note"></textarea>
+          <textarea
+            class="textarea"
+            name="note"
+            id="note"
+            placeholder="Note"
+          ></textarea>
           <button class="button btn">Send</button>
         </form>
       </div>
