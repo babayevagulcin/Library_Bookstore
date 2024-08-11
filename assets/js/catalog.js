@@ -5,20 +5,21 @@ import {
   onChildAdded,
   push,
   set,
+  onValue,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+
+function truncateText(text, maxLength) {
+  if (!text) {
+    return "";
+  }
+  if (text.length > maxLength) {
+    return text.slice(0, maxLength) + "...";
+  }
+  return text;
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   const booksContainer = document.getElementById("books-container");
-
-  function truncateText(text, maxLength) {
-    if (!text) {
-      return "";
-    }
-    if (text.length > maxLength) {
-      return text.slice(0, maxLength) + "...";
-    }
-    return text;
-  }
 
   function createBookCard(book) {
     const title = truncateText(book.title || book.name, 15);
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const displayImageUrl = book.imageUrl ? book.imageUrl : "../img/book_1.png";
 
     return `
-      <div class="med-product-card">
+      <div class="med-product-card" data-id="${book.id}">
         ${book.new ? ' <div class="new-label">New</div>' : ""}
         <div class="related-prod-wrapper">
           <img src="${displayImageUrl}" alt="${title}" class="related-prod-img" />
@@ -43,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
   }
-
   function addBookToCatalog(book) {
     const bookCardHTML = createBookCard(book);
     booksContainer.insertAdjacentHTML("afterbegin", bookCardHTML);
@@ -54,8 +54,17 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       const snapshot = await get(booksRef);
       if (snapshot.exists()) {
+        const books = [];
         snapshot.forEach((childSnapshot) => {
           const book = childSnapshot.val();
+          books.push({ ...book, id: childSnapshot.key });
+        });
+        books.sort((a, b) => b.timestamp - a.timestamp);
+        books.forEach((book) => {
+          addBookToCatalog(book);
+        });
+
+        books.reverse().forEach((book) => {
           addBookToCatalog(book);
         });
       }
@@ -65,12 +74,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
     onChildAdded(booksRef, (snapshot) => {
       const book = snapshot.val();
-      addBookToCatalog(book);
+      addBookToCatalog({ ...book, id: snapshot.key });
     });
   }
 
   loadBooks();
 });
+
+//! NEW BOOKS COLLECTION
+function displayNewBooks() {
+  const newBooksRef = ref(db, "newBooks");
+
+  onValue(newBooksRef, (snapshot) => {
+    const newBooksContainer = document.querySelector(".new_book");
+    newBooksContainer.innerHTML = "";
+
+    const newBooks = [];
+    snapshot.forEach((childSnapshot) => {
+      const book = childSnapshot.val();
+      newBooks.push({ ...book, id: childSnapshot.key });
+    });
+    newBooks.sort((a, b) => b.timestamp - a.timestamp);
+
+    newBooks.forEach((book) => {
+      const bookCard = document.createElement("div");
+      bookCard.className = "med-product-card";
+
+      const title = truncateText(book.title, 15);
+      const authors = truncateText(book.authors.join(", "), 15);
+
+      bookCard.innerHTML = `
+        <div class="new-label">New</div>
+        <div class="related-prod-wrapper">
+          <img src="${book.imageUrl}" alt="${book.title}" class="related-prod-img" />
+        </div>
+        <div class="related-prod-detail">
+          <h4 class="rel-med-name">${title}</h4>
+          <span class="rel-no-of-tab">${authors}</span>
+          <button type="button">Read more</button>
+        </div>
+      `;
+
+      newBooksContainer.prepend(bookCard);
+    });
+  });
+}
+document.addEventListener("DOMContentLoaded", function () {
+  displayNewBooks();
+});
+
 const bindCarouselEvents = (containerId) => {
   const wrapper = document.getElementById(containerId);
   const btn_left = wrapper.getElementsByClassName("btn-left")[0];

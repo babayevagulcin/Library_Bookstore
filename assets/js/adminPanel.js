@@ -68,6 +68,8 @@ import {
   set,
   get,
   push,
+  query,
+  orderByChild,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 
 const API_URL = "https://www.googleapis.com/books/v1/volumes?q=";
@@ -103,7 +105,12 @@ async function getBooksFromFirebase() {
     const booksRef = ref(db, "books/");
     const snapshot = await get(booksRef);
     if (snapshot.exists()) {
-      return snapshot.val();
+      const books = snapshot.val();
+      const booksArray = Object.keys(books).map((key) => ({
+        ...books[key],
+        id: key,
+      }));
+      return booksArray.reverse();
     } else {
       console.log("No books found in Firebase");
       return null;
@@ -149,9 +156,9 @@ function displaySearchResults(books) {
       const bookElement = document.createElement("p");
 
       bookElement.innerHTML = `
-          <span class="master icon-clock"></span>
-          <span>${bookTitle} by ${bookAuthor}</span>
-        `;
+            <span class="master icon-clock"></span>
+            <span>${bookTitle} by ${bookAuthor}</span>
+          `;
 
       bookElement.addEventListener("click", () => {
         fillBookForm(book);
@@ -210,6 +217,30 @@ document.getElementById("searchInput").addEventListener("input", async () => {
   }
 });
 
+async function updateTimestamps() {
+  const booksRef = ref(db, "books");
+  const booksQuery = query(booksRef, orderByKey());
+  const snapshot = await get(booksQuery);
+
+  if (snapshot.exists()) {
+    snapshot.forEach((childSnapshot) => {
+      const bookKey = childSnapshot.key;
+      const bookData = childSnapshot.val();
+
+      if (!bookData.timestamp) {
+        const updatedBookData = {
+          ...bookData,
+          timestamp: Date.now(),
+        };
+        set(ref(db, `books/${bookKey}`), updatedBookData);
+      }
+    });
+    console.log("Timestamps updated for existing books.");
+  } else {
+    console.log("No books found in the database.");
+  }
+}
+
 //! KİTAB elave etmek
 document.addEventListener("DOMContentLoaded", function () {
   document
@@ -225,18 +256,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
       try {
         const dbRef = ref(db, "books");
-        const booksSnapshot = await get(dbRef);
-
-        if (
-          booksSnapshot.exists() &&
-          bookExists(booksSnapshot.val(), newBook)
-        ) {
-          alert("This book already exists.");
-          return;
-        }
-
         const newBookRef = ref(db, `books/${push(dbRef).key}`);
-        await set(newBookRef, newBook);
+        await set(newBookRef, {
+          ...newBook,
+          timestamp: Date.now(),
+        });
+        const booksQuery = query(ref(db, "books"), orderByChild("timestamp"));
+
+        if (newBook.new) {
+          const newBooksRef = ref(db, `newBooks/${push(dbRef).key}`);
+          await set(newBooksRef, newBook);
+        }
 
         console.log("Book added to Firebase");
 
@@ -296,24 +326,129 @@ function addBookToCatalog(book, bookId) {
     console.error("Catalog element not found");
     return;
   }
+  const existingBook = catalog.querySelector(`[data-id="${bookId}"]`);
+  if (existingBook) {
+    return;
+  }
 
   const bookCard = document.createElement("div");
   bookCard.className = "med-product-card";
   bookCard.setAttribute("data-id", bookId);
 
   bookCard.innerHTML = `
-     ${book.new ? ' <div class="new-label">New</div>' : ""}
-    <div class="related-prod-wrapper">
-      <img src="${book.imageUrl}" alt="${
+      ${book.new ? ' <div class="new-label">New</div>' : ""}
+      <div class="related-prod-wrapper">
+        <img src="${book.imageUrl}" alt="${
     book.title
   }" class="related-prod-img" />
-    </div>
-    <div class="related-prod-detail">
-      <h4 class="rel-med-name">${book.title}</h4>
-      <span class="rel-no-of-tab">${book.authors.join(", ")}</span>
-      <button type="button">Read more</button>
-    </div>
-  `;
+      </div>
+      <div class="related-prod-detail">
+        <h4 class="rel-med-name">${book.title}</h4>
+        <span class="rel-no-of-tab">${book.authors.join(", ")}</span>
+        <button type="button">Read more</button>
+      </div>
+    `;
 
   catalog.appendChild(bookCard);
 }
+//! ABOUT STORE
+document
+  .getElementById("aboutForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const title = document.getElementById("aboutBookName").value;
+    const imgUrl = document.getElementById("aboutImgUrl").value;
+    const description = document.getElementById("aboutDescription").value;
+
+    console.log("Title:", title);
+    console.log("Image URL:", imgUrl);
+    console.log("Description:", description);
+
+    localStorage.setItem("aboutTitle", title);
+    localStorage.setItem("aboutImgUrl", imgUrl);
+    localStorage.setItem("aboutDescription", description);
+
+    alert("About info added successfully!");
+  });
+
+//! JOIN US
+document.addEventListener("DOMContentLoaded", function () {
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+
+  const tableBody = document.querySelector(
+    "#joinUsSection .join_us__table tbody"
+  );
+
+  function renderTable() {
+    if (users.length === 0) {
+      tableBody.innerHTML = `
+        <tr>
+          <td colspan="4" style="text-align: center;">No records found.</td>
+        </tr>
+      `;
+    } else {
+      tableBody.innerHTML = users
+        .map(
+          (user, index) => `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${user.fullName}</td>
+            <td>${user.email}</td>
+            <td><span class="master icon-trash" data-index="${index}"></span></td>
+          </tr>
+        `
+        )
+        .join("");
+    }
+  }
+
+  renderTable();
+
+  tableBody.addEventListener("click", function (event) {
+    if (event.target.classList.contains("icon-trash")) {
+      const index = event.target.getAttribute("data-index");
+      users.splice(index, 1);
+      localStorage.setItem("users", JSON.stringify(users));
+      renderTable();
+    }
+  });
+});
+
+//! CONTACT
+document.addEventListener("DOMContentLoaded", function () {
+  const contactTableBody = document.querySelector(".contactTable tbody");
+
+  const contacts = JSON.parse(localStorage.getItem("contacts")) || [];
+
+  if (contacts.length > 0) {
+    let tableContent = "";
+
+    contacts.forEach((contact, index) => {
+      tableContent += `
+              <tr>
+                  <td>${index + 1}</td>
+                  <td>${contact.fullname}</td>
+                  <td>${contact.address}</td>
+                  <td>${contact.email}</td>
+                  <td>${contact.phone}</td>
+                  <td><span class="master icon-trash" data-index="${index}"></span></td>
+              </tr>
+          `;
+    });
+
+    contactTableBody.innerHTML = tableContent;
+
+    document.querySelectorAll(".icon-trash").forEach((icon) => {
+      icon.addEventListener("click", function () {
+        const index = this.getAttribute("data-index");
+        contacts.splice(index, 1);
+        localStorage.setItem("contacts", JSON.stringify(contacts));
+        location.reload();
+      });
+    });
+  } else {
+    contactTableBody.innerHTML =
+      '<tr><td colspan="6">No contacts found.</td></tr>';
+  }
+});
